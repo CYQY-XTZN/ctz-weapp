@@ -1,0 +1,39 @@
+// src/pages/constellation-detail/index.scss
+.constellation-detail-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  .header {
+    height: 60px;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .back-btn {
+      color: #FFD700;
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background: rgba(255, 215, 0, 0.1);
+      cursor: pointer;
+    }
+    
+    .title {
+      flex: 1;
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  
+  .api-iframe {
+    flex: 1;
+    width: 100%;
+    height: calc(100vh - 60px);
+  }
+}

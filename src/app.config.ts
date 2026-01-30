@@ -7,7 +7,17 @@ export default {
     'pages/birthtime/index',
     'pages/gender/index',
     'pages/relationship/index',
-    'pages/home/index'
+    'pages/home/index',
+    'pages/constellation/index',
+    'pages/constellation/simple',
+    'pages/constellation-detail/index',
+    'pages/mountainPage/index',
+    'pages/mountains/jinxiu-mountain/index',
+    'pages/mountains/chongqing-mountain/index',
+    "pages/profile/index",
+    "pages/IPs/qinggeng/index",
+    "pages/IPs/feimian/index",
+    "pages/xingyouhui/index"
   ],
   window: {
     backgroundTextStyle: 'light',

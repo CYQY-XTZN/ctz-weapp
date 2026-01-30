@@ -1,0 +1,361 @@
+// src/pages/constellation/index.scss
+.constellation-container {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #FFFFFF;
+
+  &.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.9);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  // 背景图
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  // 顶部导航栏 - 与其他页面相同
+  .header-nav {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 10;
+
+    .back-button {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      margin-top: 20px;
+
+      .back-arrow {
+        font-size: 36px;
+        color: #FFFFFF;
+      }
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .nav-placeholder {
+      width: 60px;
+    }
+  }
+
+  // 主内容区域
+  .main-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px 120px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 顶部问候语
+  .greeting-section {
+    text-align: left;
+    margin-bottom: 40px;
+    margin-top: 90px; // Increased by another 5px (from 85px to 90px)
+    
+    .greeting-text {
+      font-size: 40px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      display: block;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .time-info {
+      font-size: 26px;
+      color: rgba(255, 255, 255, 0.8);
+      opacity: 0.9;
+    }
+  }
+
+  // 星座图片
+  .constellation-image-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    
+    .constellation-image {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+    }
+  }
+
+  // 星座名称
+  .constellation-names {
+    text-align: center;
+    margin-bottom: 40px;
+    
+    .chinese-name {
+      font-size: 44px;
+      font-weight: 800;
+      color: #FFFFFF;
+      display: block;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+    
+    .english-name {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+
+  // 描述区域
+  .description-section {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    
+    .description-text {
+      font-size: 30px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    
+    .view-more {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      
+      &:active {
+        opacity: 0.7;
+      }
+      
+      .view-more-text {
+        font-size: 20px;
+        color: #FFD700;
+        font-weight: 500;
+        margin-right: 10px;
+      }
+      
+      .arrow {
+        font-size: 20px;
+        color: #FFD700;
+        font-weight: bold;
+        margin-top: -2px;
+      }
+    }
+  }
+
+  // 运势区域
+  .luck-section {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    
+    .luck-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 5px;
+      display: block;
+    }
+    
+    .luck-date {
+      font-size: 26px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 30px;
+      display: block;
+    }
+    
+    .luck-progress-container {
+      .luck-label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: right;
+        margin-bottom: 25px;
+        
+        .luck-label {
+          font-size: 28px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .luck-percent {
+          font-size: 40px;
+          font-weight: 800;
+          color: #FFD700;
+        }
+      }
+      
+      .luck-progress {
+        border-radius: 20px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  // 底部导航栏
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    z-index: 100;
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 32px;
+      border-radius: 15px;
+      transition: all 0.2s ease;
+      
+      &.active {
+        background: rgba(255, 215, 0, 0.15);
+        
+        .nav-text {
+          color: #FFD700;
+        }
+      }
+      
+      &:active:not(.active) {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .nav-icon {
+        font-size: 36px;
+        margin-bottom: 5px;
+      }
+      
+      .nav-text {
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+// 响应式调整
+@media (max-width: 375px) {
+  .constellation-container {
+    .main-content {
+      padding: 30px 15px 110px;
+    }
+    
+    .greeting-section {
+      margin-top: 85px; // Adjusted for mobile with back button (increased by another 5px)
+      
+      .greeting-text {
+        font-size: 38px;
+      }
+    }
+    
+    .constellation-image-container {
+      height: 200px;
+      
+      .constellation-image {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    
+    .constellation-names {
+      .chinese-name {
+        font-size: 45px;
+      }
+      
+      .english-name {
+        font-size: 30px;
+        letter-spacing: 2px;
+      }
+    }
+    
+    .description-section {
+      padding: 30px;
+      
+      .description-text {
+        font-size: 28px;
+      }
+      
+      .view-more {
+        justify-content: flex-end;
+      }
+    }
+    
+    .luck-section {
+      padding: 30px;
+      
+      .luck-title {
+        font-size: 34px;
+      }
+      
+      .luck-date {
+        font-size: 25px;
+      }
+      
+      .luck-progress-container {
+        .luck-label-row {
+          .luck-label {
+            font-size: 27px;
+          }
+        }
+      }
+      
+      .luck-percent {
+        font-size: 38px;
+      }
+    }
+    
+    .bottom-nav {
+      .nav-item {
+        padding: 12px 24px;
+        
+        .nav-icon {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+}

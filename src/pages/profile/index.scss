@@ -1,0 +1,872 @@
+// src/pages/profile/index.scss
+.profile-page {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Alibaba PuHuiTi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  color: #FFFFFF;
+  padding-bottom: 140px;
+
+  // 背景图
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+  }
+
+  // 用户信息卡片
+  .user-card {
+    background: transparent !important;
+    margin: 180px 32px 60px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    // 用户头像部分 - 点击更换头像
+    .user-avatar-section {
+      margin-bottom: 60px;
+      position: relative;
+      
+      .avatar-container {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+        
+        &:active {
+          transform: scale(0.98);
+          
+          .avatar-overlay {
+            opacity: 0.9;
+          }
+        }
+        
+        .user-avatar {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          border: 6px solid rgba(255, 255, 255, 0.3);
+          background-color: #fff;
+          object-fit: cover;
+          box-shadow: 
+            0 10px 30px rgba(0, 0, 0, 0.3),
+            0 0 50px rgba(255, 255, 255, 0.1);
+        }
+        
+        .avatar-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          border-radius: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          
+          .change-icon {
+            font-size: 40px;
+            margin-bottom: 8px;
+          }
+          
+          .change-text {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 500;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+
+    // 用户信息部分
+    .user-info-section {
+      text-align: center;
+      margin-bottom: 70px;
+      
+      .username-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        
+        &:active {
+          opacity: 0.7;
+        }
+      }
+
+      .username {
+        display: block;
+        font-size: 56px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 20px;
+        text-shadow: 
+          0 4px 15px rgba(0, 0, 0, 0.7),
+          0 0 20px rgba(255, 255, 255, 0.2);
+      }
+      
+      .bio {
+        display: block;
+        font-size: 36px;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 400;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        line-height: 1.4;
+      }
+
+      .edit-icon {
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+      }
+    }
+
+    // 用户数据统计部分 - 有边框的box
+    .user-stats-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      
+      .stats-box {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 25px;
+        padding: 40px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: 
+          0 10px 30px rgba(0, 0, 0, 0.2),
+          inset 0 0 20px rgba(255, 255, 255, 0.05);
+        width: 90%;
+        max-width: 900px;
+        
+        .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 50px;
+          flex: 1;
+          
+          .stat-number {
+            font-size: 52px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+            text-shadow: 
+              0 4px 12px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(255, 255, 255, 0.2);
+          }
+          
+          .stat-label {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+          }
+        }
+        
+        .stat-divider {
+          width: 1px;
+          height: 80px;
+          background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 20%,
+            rgba(255, 255, 255, 0.2) 80%,
+            transparent 100%
+          );
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  // 垂直功能菜单
+  .vertical-menu {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0 32px 120px;
+    border-radius: 30px;
+    padding: 35px 40px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+    
+    .menu-item {
+      display: flex;
+      align-items: center;
+      padding: 35px 0;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 0.2s ease;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:active {
+        opacity: 0.7;
+        transform: translateX(10px);
+      }
+      
+      .menu-icon {
+        width: 56px;
+        height: 56px;
+        margin-right: 40px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        object-fit: contain;
+      }
+      
+      .menu-text {
+        font-size: 44px;
+        color: #FFFFFF;
+        font-weight: 500;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+      
+      // 退出登录特殊样式
+      &.logout-item {
+        .menu-icon {
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) 
+                  brightness(1.2) 
+                  sepia(1) 
+                  hue-rotate(-50deg) 
+                  saturate(3);
+        }
+        
+        .menu-text {
+          color: #ff6b6b;
+        }
+      }
+    }
+  }
+
+  // 底部导航栏
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 22px 0;
+    z-index: 100;
+    min-height: 130px;
+    
+    // 添加一个半透明的装饰层
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        transparent 100%
+      );
+      z-index: -1;
+    }
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px 36px;
+      border-radius: 22px;
+      transition: all 0.3s ease;
+      flex: 1;
+      margin: 0 14px;
+      cursor: pointer;
+      
+      &.active {
+        background: rgba(255, 215, 0, 0.25);
+        box-shadow: 
+          0 0 22px rgba(255, 215, 0, 0.35),
+          inset 0 0 12px rgba(255, 255, 255, 0.12);
+        
+        .nav-text {
+          color: #FFD700;
+          font-weight: 600;
+          text-shadow: 
+            0 0 12px rgba(255, 215, 0, 0.6),
+            0 0 25px rgba(255, 215, 0, 0.25);
+        }
+        
+        .nav-icon {
+          transform: scale(1.15);
+          text-shadow: 0 0 18px rgba(255, 215, 0, 0.8);
+        }
+      }
+      
+      &:active:not(.active) {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(0.95);
+      }
+      
+      .nav-icon {
+        font-size: 52px !important;
+        margin-bottom: 8px !important;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.35));
+        line-height: 1;
+      }
+      
+      .nav-text {
+        font-size: 35px !important;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: 500;
+        text-shadow: 
+          0 1px 5px rgba(0, 0, 0, 0.45),
+          0 0 6px rgba(255, 255, 255, 0.18);
+        transition: color 0.3s ease;
+        line-height: 1.1;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+
+  // 响应式调整
+  @media (max-width: 768px) {
+    padding-bottom: 125px;
+    
+    .user-card {
+      margin: 160px 24px 50px;
+      
+      .user-avatar-section {
+        margin-bottom: 50px;
+        
+        .avatar-container {
+          width: 160px;
+          height: 160px;
+          
+          .user-avatar {
+            border-width: 5px;
+          }
+          
+          .avatar-overlay {
+            .change-icon {
+              font-size: 36px;
+            }
+            
+            .change-text {
+              font-size: 22px;
+            }
+          }
+        }
+      }
+      
+      .user-info-section {
+        margin-bottom: 60px;
+        
+        .username {
+          font-size: 48px;
+        }
+        
+        .bio {
+          font-size: 32px;
+        }
+      }
+      
+      .user-stats-section {
+        .stats-box {
+          padding: 32px 15px;
+          border-radius: 22px;
+          width: 95%;
+          
+          .stat-item {
+            padding: 0 40px;
+            
+            .stat-number {
+              font-size: 46px;
+            }
+            
+            .stat-label {
+              font-size: 28px;
+            }
+          }
+          
+          .stat-divider {
+            height: 70px;
+            margin: 0 8px;
+          }
+        }
+      }
+    }
+    
+    .vertical-menu {
+      margin: 0 24px 110px;
+      padding: 30px 30px;
+      border-radius: 25px;
+      
+      .menu-item {
+        padding: 30px 0;
+        
+        .menu-icon {
+          width: 50px;
+          height: 50px;
+          margin-right: 35px;
+        }
+        
+        .menu-text {
+          font-size: 38px;
+        }
+      }
+    }
+    
+    // 底部导航栏响应式调整（平板）
+    .bottom-nav {
+      padding: 16px 0;
+      min-height: 110px;
+      
+      .nav-item {
+        padding: 13px 26px;
+        margin: 0 10px;
+        border-radius: 18px;
+        
+        .nav-icon {
+          font-size: 44px !important;
+          margin-bottom: 6px !important;
+        }
+        
+        .nav-text {
+          font-size: 30px !important;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding-bottom: 105px;
+    
+    .user-card {
+      margin: 140px 20px 40px;
+      
+      .user-avatar-section {
+        margin-bottom: 40px;
+        
+        .avatar-container {
+          width: 140px;
+          height: 140px;
+          
+          .user-avatar {
+            border-width: 4px;
+          }
+          
+          .avatar-overlay {
+            .change-icon {
+              font-size: 32px;
+              margin-bottom: 6px;
+            }
+            
+            .change-text {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      
+      .user-info-section {
+        margin-bottom: 50px;
+        
+        .username {
+          font-size: 42px;
+          margin-bottom: 15px;
+        }
+        
+        .bio {
+          font-size: 28px;
+        }
+      }
+      
+      .user-stats-section {
+        .stats-box {
+          padding: 28px 10px;
+          border-radius: 20px;
+          width: 100%;
+          
+          .stat-item {
+            padding: 0 30px;
+            
+            .stat-number {
+              font-size: 40px;
+            }
+            
+            .stat-label {
+              font-size: 24px;
+            }
+          }
+          
+          .stat-divider {
+            height: 65px;
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+    
+    .vertical-menu {
+      margin: 0 20px 100px;
+      padding: 25px 25px;
+      border-radius: 20px;
+      
+      .menu-item {
+        padding: 28px 0;
+        
+        .menu-icon {
+          width: 44px;
+          height: 44px;
+          margin-right: 30px;
+        }
+        
+        .menu-text {
+          font-size: 34px;
+        }
+      }
+    }
+    
+    // 底部导航栏小屏幕调整（手机）
+    .bottom-nav {
+      padding: 13px 0;
+      min-height: 90px;
+      backdrop-filter: blur(15px);
+      
+      .nav-item {
+        padding: 10px 18px;
+        margin: 0 6px;
+        border-radius: 16px;
+        
+        .nav-icon {
+          font-size: 38px !important;
+          margin-bottom: 4px !important;
+        }
+        
+        .nav-text {
+          font-size: 26px !important;
+        }
+      }
+    }
+  }
+  
+  // 超小屏幕额外调整
+  @media (max-height: 700px) {
+    .user-card {
+      margin: 120px 20px 30px;
+      
+      .user-avatar-section {
+        .avatar-container {
+          width: 120px;
+          height: 120px;
+          
+          .avatar-overlay {
+            .change-icon {
+              font-size: 28px;
+            }
+            
+            .change-text {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+      
+      .user-info-section {
+        .username {
+          font-size: 38px;
+        }
+        
+        .bio {
+          font-size: 26px;
+        }
+      }
+      
+      .user-stats-section {
+        .stats-box {
+          padding: 24px 8px;
+          
+          .stat-item {
+            padding: 0 25px;
+            
+            .stat-number {
+              font-size: 36px;
+            }
+            
+            .stat-label {
+              font-size: 22px;
+            }
+          }
+          
+          .stat-divider {
+            height: 60px;
+          }
+        }
+      }
+    }
+    
+    .vertical-menu {
+      margin: 0 20px 90px;
+      
+      .menu-item {
+        padding: 22px 0;
+        
+        .menu-icon {
+          width: 40px;
+          height: 40px;
+        }
+        
+        .menu-text {
+          font-size: 30px;
+        }
+      }
+    }
+    
+    .bottom-nav {
+      min-height: 80px;
+      padding: 10px 0;
+      
+      .nav-item {
+        padding: 8px 14px;
+        
+        .nav-icon {
+          font-size: 34px !important;
+          margin-bottom: 3px !important;
+        }
+        
+        .nav-text {
+          font-size: 22px !important;
+        }
+      }
+    }
+  }
+
+  // 超宽屏幕优化
+  @media (min-width: 1200px) {
+    padding-bottom: 185px;
+    
+    .user-card {
+      margin: 220px 40px 80px;
+      
+      .user-avatar-section {
+        margin-bottom: 70px;
+        
+        .avatar-container {
+          width: 220px;
+          height: 220px;
+          
+          .user-avatar {
+            border-width: 8px;
+          }
+          
+          .avatar-overlay {
+            .change-icon {
+              font-size: 48px;
+              margin-bottom: 12px;
+            }
+            
+            .change-text {
+              font-size: 28px;
+            }
+          }
+        }
+      }
+      
+      .user-info-section {
+        margin-bottom: 90px;
+        
+        .username {
+          font-size: 64px;
+          margin-bottom: 30px;
+        }
+        
+        .bio {
+          font-size: 44px;
+        }
+      }
+      
+      .user-stats-section {
+        .stats-box {
+          padding: 50px 30px;
+          border-radius: 35px;
+          width: 85%;
+          max-width: 1000px;
+          
+          .stat-item {
+            padding: 0 70px;
+            
+            .stat-number {
+              font-size: 60px;
+            }
+            
+            .stat-label {
+              font-size: 38px;
+            }
+          }
+          
+          .stat-divider {
+            height: 90px;
+            margin: 0 15px;
+          }
+        }
+      }
+    }
+    
+    .vertical-menu {
+      margin: 0 40px 140px;
+      padding: 45px 50px;
+      border-radius: 40px;
+      
+      .menu-item {
+        padding: 45px 0;
+        
+        .menu-icon {
+          width: 64px;
+          height: 64px;
+          margin-right: 50px;
+        }
+        
+        .menu-text {
+          font-size: 52px;
+        }
+      }
+    }
+    
+    // 超宽屏幕下的底部导航栏
+    .bottom-nav {
+      min-height: 160px;
+      padding: 32px 0;
+      
+      .nav-item {
+        padding: 28px 56px;
+        margin: 0 22px;
+        border-radius: 32px;
+        
+        .nav-icon {
+          font-size: 68px !important;
+          margin-bottom: 14px !important;
+        }
+        
+        .nav-text {
+          font-size: 48px !important;
+        }
+      }
+    }
+  }
+
+  /* 编辑用户名弹窗样式 */
+  .edit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .edit-modal {
+    background-color: #fff;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 500px; /* ← 增大最大宽度 */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .edit-modal-header {
+    padding: 24px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+  }
+
+  .edit-modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .edit-modal-content {
+    padding: 24px 20px;
+  }
+
+  .user-name-input {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #333; /* ← 关键：显式设置深色文字，解决白色看不清问题 */
+    background-color: #fff;
+
+    &:focus {
+      border-color: rgba(108, 92, 231, 0.85);
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    }
+  }
+
+  .input-tips {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+  }
+
+  .edit-modal-footer {
+    display: flex;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .edit-button {
+    flex: 1;
+    padding: 18px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    
+    &:active {
+      opacity: 0.7;
+    }
+    
+    &.cancel {
+      border-right: 1px solid #f0f0f0;
+      color: #666;
+    }
+    
+    &.confirm {
+      background-color: rgba(108, 92, 231, 0.85);
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+}

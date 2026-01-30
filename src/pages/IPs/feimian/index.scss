@@ -1,0 +1,561 @@
+// index.scss - 文字向下5%，按钮向下50%并变大25%
+
+// ===== 页面基础样式 =====
+page {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+  font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+}
+
+// ===== 全屏容器 =====
+.fullscreen-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+// ===== 全屏背景图片 =====
+.fullscreen-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+  // 使用 transform 放大图片
+  transform: scale(1.06);
+  transform-origin: center center;
+  
+  // 提升图片质量
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  // 防止用户操作
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+// ===== 文字区域样式 =====
+.text-section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 40rpx;
+  z-index: 10;
+  color: white;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.5);
+  
+  // 文字
+  &.text-section-2 {
+    top: 57% !important; // 55% -> 60%，再向下5%
+    max-width: 85%;
+    margin: 0 auto;
+    text-align: center; // 添加居中
+    
+    .text-line {
+      font-size: 34rpx !important;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 25rpx;
+      display: block;
+      text-align: center; // 每行文字居中
+      
+      &:first-child {
+        font-size: 38rpx !important;
+        font-weight: 600;
+        margin-bottom: 20rpx;
+      }
+      
+      &:nth-child(2) {
+        font-size: 32rpx !important;
+        color: rgba(255, 255, 255, 0.95);
+      }
+    }
+    
+    .text-content {
+      font-size: 30rpx !important;
+      line-height: 1.8;
+      display: block;
+      margin-top: 40rpx; // 增加间距
+      color: rgba(255, 255, 255, 0.9);
+      text-align: center; // 居中
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+// ===== 按钮容器 =====
+.button-container {
+  position: absolute;
+  bottom: 7% !important; // 25% -> 10%，向下移动50%（更靠底部）
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  padding: 0 40rpx;
+}
+
+// ===== 开启按钮样式 =====
+.start-button {
+  width: 560rpx !important; // 450rpx -> 560rpx，变大25%
+  height: auto;
+  cursor: pointer;
+  
+  // 按钮点击效果
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.9;
+    transition: all 0.1s ease;
+  }
+  
+  // H5悬停效果
+  &:hover {
+    filter: drop-shadow(0 0 40rpx rgba(0, 150, 255, 0.9));
+  }
+  
+  // 按钮发光动画
+  animation: buttonGlow 2s ease-in-out infinite alternate;
+}
+
+// 按钮发光动画
+@keyframes buttonGlow {
+  from {
+    filter: drop-shadow(0 0 20rpx rgba(0, 150, 255, 0.7));
+  }
+  to {
+    filter: drop-shadow(0 0 40rpx rgba(0, 150, 255, 1));
+  }
+}
+
+// ===== 临时按钮样式（如果没有按钮图片） =====
+.temp-button {
+  width: 625rpx !important; // 500rpx -> 625rpx，变大25%
+  height: 150rpx !important; // 120rpx -> 150rpx，变大25%
+  background: linear-gradient(135deg, #2196F3, #1976D2) !important;
+  border-radius: 75rpx !important; // 60rpx -> 75rpx
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 52rpx !important; // 42rpx -> 52rpx，变大25%
+  font-weight: 600;
+  box-shadow: 0 20rpx 50rpx rgba(33, 150, 243, 0.6) !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  // 按钮光泽效果
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+  
+  &:active {
+    transform: scale(0.96) translateY(4rpx);
+    box-shadow: 0 10rpx 35rpx rgba(33, 150, 243, 0.5) !important;
+  }
+}
+
+// ===== 加载指示器 =====
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 30rpx 50rpx;
+  border-radius: 20rpx;
+  z-index: 100;
+  font-size: 28rpx;
+  backdrop-filter: blur(10rpx);
+}
+
+// ===== 响应式调整 =====
+
+// 小屏手机
+@media screen and (max-width: 375px) {
+  .text-section {
+    padding: 0 30rpx;
+    
+    &.text-section-1 {
+      top: 45% !important;
+      
+      .text-line {
+        font-size: 36rpx !important;
+      }
+    }
+    
+    &.text-section-2 {
+      top: 55% !important;
+      max-width: 90%;
+      
+      .text-line {
+        font-size: 30rpx !important;
+        
+        &:first-child {
+          font-size: 34rpx !important;
+        }
+        
+        &:nth-child(2) {
+          font-size: 28rpx !important;
+        }
+      }
+      
+      .text-content {
+        font-size: 26rpx !important;
+        line-height: 1.6;
+        max-width: 95%;
+      }
+    }
+  }
+  
+  .button-container {
+    bottom: 8% !important;
+  }
+  
+  .start-button {
+    width: 450rpx !important; // 小屏上稍微小一点
+  }
+  
+  .temp-button {
+    width: 500rpx !important;
+    height: 120rpx !important;
+    font-size: 42rpx !important;
+    border-radius: 60rpx !important;
+  }
+}
+
+// 大屏手机
+@media screen and (min-width: 414px) and (max-height: 896px) {
+  .text-section.text-section-1 {
+    top: 53% !important;
+  }
+  
+  .text-section.text-section-2 {
+    top: 63% !important;
+  }
+  
+  .button-container {
+    bottom: 12% !important;
+  }
+  
+  .start-button {
+    width: 600rpx !important;
+  }
+  
+  .temp-button {
+    width: 650rpx !important;
+    height: 160rpx !important;
+    font-size: 56rpx !important;
+  }
+}
+
+// 平板设备
+@media screen and (min-width: 768px) {
+  .text-section {
+    padding: 0 100rpx;
+    
+    &.text-section-1 {
+      top: 55% !important;
+      
+      .text-line {
+        font-size: 48rpx !important;
+      }
+    }
+    
+    &.text-section-2 {
+      top: 65% !important;
+      max-width: 70%;
+      
+      .text-line {
+        font-size: 40rpx !important;
+        
+        &:first-child {
+          font-size: 44rpx !important;
+        }
+        
+        &:nth-child(2) {
+          font-size: 38rpx !important;
+        }
+      }
+      
+      .text-content {
+        font-size: 36rpx !important;
+        line-height: 1.9;
+      }
+    }
+  }
+  
+  .button-container {
+    bottom: 15% !important;
+  }
+  
+  .start-button {
+    width: 700rpx !important;
+  }
+  
+  .temp-button {
+    width: 750rpx !important;
+    height: 188rpx !important;
+    font-size: 60rpx !important;
+    border-radius: 94rpx !important;
+  }
+}
+
+// 横屏模式
+@media screen and (orientation: landscape) {
+  .text-section.text-section-1 {
+    top: 40% !important;
+  }
+  
+  .text-section.text-section-2 {
+    top: 50% !important;
+    max-width: 60%;
+  }
+  
+  .button-container {
+    bottom: 15% !important;
+  }
+  
+  .start-button {
+    width: 500rpx !important;
+  }
+  
+  .temp-button {
+    width: 560rpx !important;
+    height: 120rpx !important;
+    font-size: 48rpx !important;
+  }
+}
+
+// ===== 性能优化 =====
+.start-button, .temp-button {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, filter;
+}
+
+// ===== 禁用动画支持 =====
+@media (prefers-reduced-motion: reduce) {
+  .start-button, .temp-button {
+    animation: none;
+    
+    &:active {
+      transform: none !important;
+    }
+  }
+}
+// ===== 箭头容器样式 =====
+.arrow-container {
+  position: absolute;
+  z-index: 30;
+  cursor: pointer;
+  
+  // 向前箭头（左侧）- 向上移动
+  &.arrow-forward {
+    left: 40rpx;
+    top: 10% !important; // 从50%向上移动到40%
+  }
+  
+  // 向后箭头（右侧）- 向上移动
+  &.arrow-backward {
+    right: 40rpx;
+    top: 10% !important; // 从50%向上移动到40%
+  }
+}
+
+// 箭头按钮样式 - 完全按照你的pattern
+.back-button {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50% !important; // 圆形按钮
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  
+  // 悬停效果
+  &:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  // 点击效果
+  &:active {
+    transform: scale(0.95);
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+// 箭头符号样式 - 完全按照你的设置
+.back-arrow {
+  font-size: 36px !important;
+  color: #FFFFFF !important;
+  font-weight: 500;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  
+  // 向前箭头动画
+  .arrow-forward &:active {
+    transform: translateX(-2rpx);
+  }
+  
+  // 向后箭头动画
+  .arrow-backward &:active {
+    transform: translateX(2rpx);
+  }
+}
+
+// ===== 响应式调整 - 箭头 =====
+
+// 小屏手机
+@media screen and (max-width: 375px) {
+  .arrow-container {
+    &.arrow-forward {
+      left: 30rpx;
+      top: 35% !important; // 更向上
+    }
+    
+    &.arrow-backward {
+      right: 30rpx;
+      top: 35% !important; // 更向上
+    }
+  }
+  
+  .back-button {
+    width: 70rpx;
+    height: 70rpx;
+  }
+  
+  .back-arrow {
+    font-size: 32px !important;
+  }
+}
+
+// 大屏手机
+@media screen and (min-width: 414px) and (max-height: 896px) {
+  .arrow-container {
+    &.arrow-forward {
+      left: 50rpx;
+      top: 38% !important;
+    }
+    
+    &.arrow-backward {
+      right: 50rpx;
+      top: 38% !important;
+    }
+  }
+  
+  .back-button {
+    width: 85rpx;
+    height: 85rpx;
+  }
+  
+  .back-arrow {
+    font-size: 38px !important;
+  }
+}
+
+// 平板设备
+@media screen and (min-width: 768px) {
+  .arrow-container {
+    &.arrow-forward {
+      left: 70rpx;
+      top: 35% !important;
+    }
+    
+    &.arrow-backward {
+      right: 70rpx;
+      top: 35% !important;
+    }
+  }
+  
+  .back-button {
+    width: 100rpx;
+    height: 100rpx;
+  }
+  
+  .back-arrow {
+    font-size: 44px !important;
+  }
+}
+
+// 横屏模式
+@media screen and (orientation: landscape) {
+  .arrow-container {
+    &.arrow-forward {
+      left: 50rpx;
+      top: 30% !important; // 横屏时更向上
+    }
+    
+    &.arrow-backward {
+      right: 50rpx;
+      top: 30% !important; // 横屏时更向上
+    }
+  }
+  
+  .back-button {
+    width: 80rpx;
+    height: 80rpx;
+  }
+  
+  .back-arrow {
+    font-size: 36px !important;
+  }
+}
+
+// ===== 性能优化 =====
+.arrow-container, .back-button, .back-arrow {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+// ===== 禁用动画支持 =====
+@media (prefers-reduced-motion: reduce) {
+  .back-button {
+    transition: none !important;
+    
+    &:hover, &:active {
+      transform: none !important;
+    }
+  }
+  
+  .back-arrow {
+    transition: none !important;
+  }
+}

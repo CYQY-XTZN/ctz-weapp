@@ -1,0 +1,366 @@
+.star-friends-container {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    z-index: 1;
+    transform: translate(-5%, -5%);
+  }
+
+  .explore-header {
+    position: absolute;
+    top: calc(40vh - 10px - 88px);
+    left: 24px;
+    z-index: 10;
+    
+    .explore-title {
+      color: #ffffff;
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .components-grid {
+    position: absolute;
+    top: calc(48vh - 10px - 88px);
+    left: 0;
+    right: 0;
+    bottom: 90px;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 260px 260px; // 再次增加高度（从240px增加到260px）
+    gap: 130px 8px; // 行间距也相应增加（260px的一半=130px）
+    z-index: 5;
+    
+    .component-card {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 18px; // 稍微调整内边距
+      display: flex;
+      flex-direction: column;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      width: 84%;
+      margin: 0 auto;
+      height: 100%;
+      position: relative;
+      
+      // 心形图标样式
+      .favorite-heart {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+        z-index: 10;
+        cursor: pointer;
+        
+        // 半透明圆形背景
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.25);
+          border-radius: 50%;
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+        }
+        
+        .heart-icon {
+          position: relative;
+          z-index: 2;
+          font-size: 34px;
+          color: rgba(255, 255, 255, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          transition: all 0.3s ease;
+        }
+        
+        // 收藏状态样式 - 点击后变成粉色
+        &.favorited {
+          .heart-icon {
+            color: #ff4d8d;
+            text-shadow: 0 0 8px rgba(255, 77, 141, 0.5);
+          }
+          
+          &::before {
+            background: rgba(255, 77, 141, 0.2);
+          }
+        }
+      }
+      
+      .image-container {
+        height: 85px; // 保持高度
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 14px; // 稍微减小下边距
+        flex-shrink: 0;
+        position: relative;
+        
+        .component-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      
+      .component-title {
+        color: #ffffff;
+        font-size: 30px; // 缩小字体（从36px缩小到30px）
+        font-weight: 700;
+        margin-bottom: 8px; // 减小下边距
+        line-height: 1.15; // 减小行高
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+      }
+      
+      .component-description {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 22px; // 缩小字体（从26px缩小到22px）
+        margin-bottom: 12px; // 减小下边距
+        line-height: 1.4; // 减小行高
+        flex-grow: 1;
+        overflow: visible; // 改为可见而不是隐藏
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      
+      .component-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+        margin-top: auto; // 确保靠底部对齐
+        
+        .distance {
+          color: rgba(255, 255, 255, 0.85);
+          font-size: 22px; // 缩小字体（从26px缩小到22px）
+          font-weight: 500;
+        }
+        
+        // 评分样式
+        .rating {
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 22px; // 缩小字体（从26px缩小到22px）
+          font-weight: 700;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          
+          // 点赞状态样式 - 点击后变成黄色
+          &.rated {
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  // 底部导航栏
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    z-index: 100;
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 24px;
+      border-radius: 15px;
+      transition: all 0.2s ease;
+      
+      &:active:not(.active) {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .nav-icon {
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+      
+      .nav-text {
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
+
+// 调整响应式版本
+@media (max-width: 375px) {
+  .star-friends-container {
+    .explore-header {
+      top: calc(39vh - 10px - 72px);
+      
+      .explore-title {
+        font-size: 36px;
+      }
+    }
+    
+    .components-grid {
+      top: calc(45vh - 10px - 72px);
+      grid-template-rows: 220px 220px; // 增加高度（从200px增加到220px）
+      gap: 110px 6px; // 行间距也相应增加（220px的一半=110px）
+      padding: 10px 12px;
+      bottom: 85px;
+      
+      .component-card {
+        padding: 14px;
+        width: 82%;
+        
+        // 响应式心形图标
+        .favorite-heart {
+          width: 44px;
+          height: 44px;
+          top: 12px;
+          right: 12px;
+          
+          .heart-icon {
+            font-size: 30px;
+          }
+        }
+        
+        .image-container {
+          height: 70px;
+          margin-bottom: 10px;
+        }
+        
+        .component-title {
+          font-size: 18px; // 缩小字体（从22px缩小到18px）
+          margin-bottom: 6px;
+          line-height: 1.1;
+        }
+        
+        .component-description {
+          font-size: 14px; // 缩小字体（从18px缩小到14px）
+          margin-bottom: 10px;
+          line-height: 1.3;
+          overflow: visible; // 改为可见
+        }
+        
+        .component-info {
+          .distance {
+            font-size: 14px; // 缩小字体（从18px缩小到14px）
+          }
+          
+          .rating {
+            font-size: 16px; // 缩小字体（从20px缩小到16px）
+          }
+        }
+      }
+    }
+    
+    .bottom-nav {
+      .nav-item {
+        padding: 10px 20px;
+        
+        .nav-icon {
+          font-size: 28px;
+        }
+        
+        .nav-text {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+// 大屏幕调整
+@media (min-width: 414px) {
+  .star-friends-container {
+    .explore-header {
+      top: calc(40vh - 10px - 96px);
+      
+      .explore-title {
+        font-size: 48px;
+      }
+    }
+    
+    .components-grid {
+      top: calc(46vh - 10px - 96px);
+      grid-template-rows: 280px 280px; // 增加高度（从260px增加到280px）
+      gap: 140px 10px; // 行间距也相应增加（280px的一半=140px）
+      bottom: 100px;
+      
+      .component-card {
+        width: 86%;
+        
+        .favorite-heart {
+          width: 56px;
+          height: 56px;
+          top: 18px;
+          right: 18px;
+          
+          .heart-icon {
+            font-size: 40px;
+          }
+        }
+        
+        .component-title {
+          font-size: 32px; // 缩小字体
+        }
+        
+        .component-description {
+          font-size: 24px; // 缩小字体
+          overflow: visible; // 改为可见
+        }
+        
+        .component-info {
+          .distance {
+            font-size: 24px; // 缩小字体
+          }
+          
+          .rating {
+            font-size: 26px; // 缩小字体
+          }
+        }
+      }
+    }
+    
+    .bottom-nav {
+      .nav-item {
+        padding: 14px 28px;
+        
+        .nav-icon {
+          font-size: 32px;
+        }
+        
+        .nav-text {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

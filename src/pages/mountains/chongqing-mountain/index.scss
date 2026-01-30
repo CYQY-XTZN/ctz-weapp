@@ -1,0 +1,600 @@
+// src/pages/mountains/chongqing-mountain/index.scss
+.chongqing-mountain-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
+  // 第一层：通用背景（全屏）
+  .general-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  // 页面标题：我的药田
+  .page-title {
+    position: absolute;
+    top: 128px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    
+    .title-text {
+      font-size: 52px;
+      color: #FFFFFF;
+      font-weight: 900;
+      text-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.3);
+      letter-spacing: 4px;
+      text-align: center;
+      white-space: nowrap;
+    }
+  }
+  
+  // 第二层：重庆山脉图片
+  .mountain-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    max-height: 90vh;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  // 返回按钮
+  .back-button {
+    position: absolute;
+    top: 128px;
+    left: 50px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    z-index: 100;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(3px);
+    }
+    
+    .back-arrow {
+      font-size: 36px;
+      color: #FFFFFF;
+      font-weight: bold;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  // 操作按钮容器
+  .action-buttons-container {
+    position: absolute;
+    bottom: 120px; // 向下移动30px
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px; // 进一步增加最大宽度
+    display: flex;
+    justify-content: center;
+    gap: 10px; // 进一步减少间隙
+    padding: 0 40px;
+    z-index: 100;
+    
+    // 图片按钮样式 - 进一步增大并移除背景
+    .image-button {
+      width: 420px; // 进一步增大 (从360px增加到420px)
+      height: 160px; // 进一步增大 (从135px增加到160px)
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 35px; // 增大圆角
+      overflow: visible !important; // 确保不裁剪
+      background: transparent !important; // 透明背景
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      // 确保没有任何边框/背景
+      border: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+      
+      // 悬停效果
+      &:hover {
+        transform: scale(1.05);
+      }
+      
+      // 点击效果
+      &:active {
+        transform: translateY(8px);
+      }
+      
+      // 按钮图片 - 进一步增大
+      .button-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important; // 确保完整显示图片
+        border-radius: 35px; // 同步增大圆角
+        transition: transform 0.3s ease;
+        // 确保图片清晰
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        
+        // 确保没有任何边框/背景
+        border: none !important;
+        background: none !important;
+      }
+      
+      // 发光效果 - 外发光，不占用空间
+      .button-glow {
+        position: absolute;
+        top: -10px; // 向外扩展
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 45px; // 更大的圆角
+        box-shadow: 
+          0 0 60px rgba(97, 79, 255, 0.8), // 更强的发光
+          0 0 0 5px rgba(255, 255, 255, 0.7) inset; // 更强的内发光
+        opacity: 0.8;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: -1; // 放在图片后面
+      }
+      
+      // 点击时的涟漪效果
+      .ripple-effect {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px; // 进一步增大
+        height: 20px; // 进一步增大
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.8);
+        transform: translate(-50%, -50%) scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+      }
+    }
+    
+    // 左侧按钮 - 浇水：向左移动60px
+    .water-button {
+      transform: translateX(-60px); // 进一步向左移动
+      
+      &:hover {
+        transform: translateX(-60px) scale(1.05);
+      }
+      
+      &:active {
+        transform: translateX(-60px) translateY(8px);
+      }
+      
+      // 为浇水按钮添加特定的发光效果
+      .button-glow {
+        box-shadow: 
+          0 0 60px rgba(0, 150, 255, 0.8), // 蓝色发光
+          0 0 0 5px rgba(255, 255, 255, 0.7) inset;
+      }
+    }
+    
+    // 右侧按钮 - 除草：向右移动60px
+    .weed-button {
+      transform: translateX(60px); // 进一步向右移动
+      
+      &:hover {
+        transform: translateX(60px) scale(1.05);
+      }
+      
+      &:active {
+        transform: translateX(60px) translateY(8px);
+      }
+      
+      // 为除草按钮添加特定的发光效果
+      .button-glow {
+        box-shadow: 
+          0 0 60px rgba(76, 175, 80, 0.8), // 绿色发光
+          0 0 0 5px rgba(255, 255, 255, 0.7) inset;
+      }
+    }
+  }
+  
+  // 加载提示
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+    .loading-text {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 25px;
+      letter-spacing: 3px;
+      font-weight: 300;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+    }
+    
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #614FFE;
+      border-radius: 50%;
+      animation: spin 1.2s ease-in-out infinite;
+    }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: translate(-50%, -50%) scale(30);
+      opacity: 0;
+    }
+  }
+  
+  // 响应式调整
+  @media (max-width: 768px) {
+    .page-title {
+      top: 108px;
+      
+      .title-text {
+        font-size: 42px;
+        letter-spacing: 3px;
+      }
+    }
+    
+    .mountain-image {
+      width: 92%;
+    }
+    
+    .back-button {
+      top: 108px;
+      left: 15px;
+      width: 55px;
+      height: 55px;
+      
+      .back-arrow {
+        font-size: 32px;
+      }
+    }
+    
+    .action-buttons-container {
+      bottom: 100px;
+      max-width: 100%;
+      gap: 5px;
+      padding: 0 20px;
+      
+      .image-button {
+        width: 350px; // 移动端进一步增大 (从315px增加到350px)
+        height: 135px; // 移动端进一步增大 (从120px增加到135px)
+        border-radius: 30px;
+        
+        .button-image {
+          border-radius: 30px;
+        }
+        
+        .button-glow {
+          border-radius: 40px;
+          top: -8px;
+          left: -8px;
+          right: -8px;
+          bottom: -8px;
+          box-shadow: 
+            0 0 50px rgba(97, 79, 255, 0.8),
+            0 0 0 4px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      // 移动端的偏移调整
+      .water-button {
+        transform: translateX(-50px);
+        
+        &:hover {
+          transform: translateX(-50px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(-50px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 50px rgba(0, 150, 255, 0.8),
+            0 0 0 4px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      .weed-button {
+        transform: translateX(50px);
+        
+        &:hover {
+          transform: translateX(50px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(50px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 50px rgba(76, 175, 80, 0.8),
+            0 0 0 4px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .page-title {
+      top: 98px;
+      
+      .title-text {
+        font-size: 36px;
+        letter-spacing: 2px;
+      }
+    }
+    
+    .mountain-image {
+      width: 94%;
+    }
+    
+    .back-button {
+      top: 98px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      
+      .back-arrow {
+        font-size: 28px;
+      }
+    }
+    
+    .action-buttons-container {
+      bottom: 80px;
+      gap: 0;
+      padding: 0 15px;
+      
+      .image-button {
+        width: 300px; // 小屏幕进一步增大 (从270px增加到300px)
+        height: 120px; // 小屏幕进一步增大 (从105px增加到120px)
+        border-radius: 28px;
+        
+        .button-image {
+          border-radius: 28px;
+        }
+        
+        .button-glow {
+          border-radius: 38px;
+          top: -6px;
+          left: -6px;
+          right: -6px;
+          bottom: -6px;
+          box-shadow: 
+            0 0 45px rgba(97, 79, 255, 0.8),
+            0 0 0 3px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      // 小屏幕的偏移调整
+      .water-button {
+        transform: translateX(-40px);
+        
+        &:hover {
+          transform: translateX(-40px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(-40px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 45px rgba(0, 150, 255, 0.8),
+            0 0 0 3px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      .weed-button {
+        transform: translateX(40px);
+        
+        &:hover {
+          transform: translateX(40px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(40px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 45px rgba(76, 175, 80, 0.8),
+            0 0 0 3px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+    }
+  }
+  
+  // 超小屏幕调整
+  @media (max-width: 360px) {
+    .page-title {
+      top: 90px;
+      
+      .title-text {
+        font-size: 32px;
+      }
+    }
+    
+    .back-button {
+      top: 90px;
+    }
+    
+    .action-buttons-container {
+      bottom: 70px;
+      padding: 0 10px;
+      
+      .image-button {
+        width: 250px; // 超小屏幕进一步增大 (从225px增加到250px)
+        height: 105px; // 超小屏幕进一步增大 (从90px增加到105px)
+        border-radius: 25px;
+        
+        .button-image {
+          border-radius: 25px;
+        }
+        
+        .button-glow {
+          border-radius: 35px;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          box-shadow: 
+            0 0 40px rgba(97, 79, 255, 0.8),
+            0 0 0 2px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      // 超小屏幕的偏移调整
+      .water-button {
+        transform: translateX(-30px);
+        
+        &:hover {
+          transform: translateX(-30px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(-30px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 40px rgba(0, 150, 255, 0.8),
+            0 0 0 2px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      .weed-button {
+        transform: translateX(30px);
+        
+        &:hover {
+          transform: translateX(30px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(30px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 40px rgba(76, 175, 80, 0.8),
+            0 0 0 2px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+    }
+  }
+  
+  // 横屏模式调整
+  @media (orientation: landscape) and (max-height: 500px) {
+    .page-title {
+      top: 80px;
+      
+      .title-text {
+        font-size: 36px;
+      }
+    }
+    
+    .back-button {
+      top: 80px;
+    }
+    
+    .action-buttons-container {
+      bottom: 50px;
+      gap: 5px;
+      padding: 0 20px;
+      
+      .image-button {
+        width: 320px; // 横屏进一步增大 (从280px增加到320px)
+        height: 115px; // 横屏进一步增大 (从100px增加到115px)
+        
+        .button-image {
+          border-radius: 25px;
+        }
+        
+        .button-glow {
+          border-radius: 35px;
+          top: -6px;
+          left: -6px;
+          right: -6px;
+          bottom: -6px;
+          box-shadow: 
+            0 0 50px rgba(97, 79, 255, 0.8),
+            0 0 0 4px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      // 横屏模式的偏移调整
+      .water-button {
+        transform: translateX(-40px);
+        
+        &:hover {
+          transform: translateX(-40px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(-40px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 50px rgba(0, 150, 255, 0.8),
+            0 0 0 4px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+      
+      .weed-button {
+        transform: translateX(40px);
+        
+        &:hover {
+          transform: translateX(40px) scale(1.05);
+        }
+        
+        &:active {
+          transform: translateX(40px) translateY(8px);
+        }
+        
+        .button-glow {
+          box-shadow: 
+            0 0 50px rgba(76, 175, 80, 0.8),
+            0 0 0 4px rgba(255, 255, 255, 0.7) inset;
+        }
+      }
+    }
+    
+    .mountain-image {
+      width: 80%;
+    }
+  }
+}

@@ -1,0 +1,267 @@
+// src/pages/birthtime/index.scss
+.birthdate-container {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+}
+
+// 顶部导航栏 - 与其他页面相同
+.header-nav {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 10;
+
+  .back-button {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    margin-top: 55px;
+
+    .back-arrow {
+      font-size: 36px;
+      color: #FFFFFF;
+    }
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .nav-placeholder {
+    width: 60px;
+  }
+}
+
+// "出生时间"标题
+.time-title {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+
+  .title-text {
+    font-size: 34px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 700;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+  }
+}
+
+// 内容容器
+.content-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  position: relative;
+  z-index: 1;
+}
+
+// 主要内容区域 - 使用绝对定位，固定在底部上方
+.main-content {
+  position: absolute;
+  bottom: 320px; /* 从240px改为320px，向上移动80px */
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 5;
+}
+
+// 滚轮状时间选择器
+.wheel-picker-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wheel-picker-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.wheel-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 140px;
+  position: relative;
+  
+  .wheel-item {
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    
+    &:active {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(0.95);
+    }
+    
+    &.active {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #6C5CE7;
+      box-shadow: 0 0 30px rgba(108, 92, 231, 0.7);
+    }
+    
+    .wheel-value {
+      font-size: 50px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.wheel-separator {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 25px;
+  border-radius: 2px;
+  
+  // 分隔符文字样式（如果有的话）
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+// 单位标签容器 - 严格对齐的布局
+.unit-labels-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 15px;
+  
+  .unit-label-item {
+    flex: 1;
+    max-width: 140px;
+    text-align: center;
+    
+    .unit-label {
+      font-size: 28px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+      display: block;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    // 时段标签特殊样式
+    &.period-label .unit-label {
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+  }
+  
+  // 分隔符占位
+  .separator-placeholder {
+    width: 40px;
+    margin: 0 25px;
+    visibility: hidden; // 占位但不显示
+    flex-shrink: 0;
+  }
+}
+
+// 底部操作按钮
+.action-section {
+  position: absolute;
+  bottom: 80px; /* 从0改为80px，向上移动80px */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 0 25px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 6;
+}
+
+.btn-skip,
+.btn-next {
+  flex: 1;
+  height: 75px;
+  border-radius: 20px;
+  font-size: 26px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.btn-skip {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  
+  &:active {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.btn-next {
+  background-color: #6C5CE7;
+  color: #FFFFFF;
+  font-weight: 800;
+
+  &:not([disabled]):active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}

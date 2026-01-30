@@ -1,0 +1,692 @@
+.mountain-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
+  // 第一层：通用背景（全屏）
+  .general-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  // 第二层：山脉图片（向下移动很多）
+  .mountain-image {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: auto;
+    max-height: 75vh;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  // 第三层：小鸟图片（再稍微向下移动）
+  .bird-container {
+    position: absolute;
+    left: 10px;
+    bottom: 60px;
+    z-index: 50;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    &:active {
+      transform: scale(0.8) translateY(10px);
+      opacity: 0.7;
+    }
+    
+    .bird-image {
+      width: 500px;
+      height: 500px;
+      object-fit: contain;
+      filter: 
+        drop-shadow(0 8px 25px rgba(0, 0, 0, 0.5))
+        drop-shadow(0 0 40px rgba(255, 215, 0, 0.4))
+        brightness(1.1)
+        contrast(1.1);
+      animation: birdSwing 6s ease-in-out infinite;
+      transform-origin: center 80%;
+    }
+    
+    // 小鸟左右摇摆动画
+    @keyframes birdSwing {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      20% {
+        transform: translateY(-5px) rotate(-12deg) scale(1.02);
+      }
+      40% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      60% {
+        transform: translateY(-5px) rotate(8deg) scale(1.02);
+      }
+      80% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+    }
+    
+    // 大鸟周围的发光效果
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 180, 0.4) 0%,
+        rgba(255, 255, 180, 0.2) 30%,
+        rgba(255, 255, 180, 0.1) 50%,
+        transparent 70%
+      );
+      z-index: -1;
+      animation: birdGlow 4s ease-in-out infinite;
+    }
+    
+    // 第二层光晕
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 680px;
+      height: 680px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at center,
+        rgba(255, 240, 150, 0.2) 0%,
+        rgba(255, 240, 150, 0.05) 40%,
+        transparent 70%
+      );
+      z-index: -2;
+      animation: birdGlow 4s ease-in-out infinite 0.5s;
+    }
+    
+    @keyframes birdGlow {
+      0%, 100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+    
+    // 小鸟翅膀扇动效果
+    .bird-image {
+      animation: birdSwing 6s ease-in-out infinite,
+                 wingFlap 2s ease-in-out infinite;
+    }
+    
+    @keyframes wingFlap {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-4px) rotate(3deg);
+      }
+      50% {
+        transform: translateY(0) rotate(0deg);
+      }
+      75% {
+        transform: translateY(-4px) rotate(-3deg);
+      }
+    }
+  }
+  
+  // 用户信息区块：晴天小太初（向下移动很多）
+  .user-info-block {
+    position: absolute;
+    top: 310px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    border-radius: 40px;
+    z-index: 100;
+    background-color: transparent;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(3px);
+    }
+    
+    .user-icon {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
+    
+    .user-text {
+      font-size: 40px;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      letter-spacing: 1px;
+    }
+  }
+  
+  // 数字信息区块（向下移动很多）
+  .number-info-block {
+    position: absolute;
+    top: 310px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    border-radius: 40px;
+    z-index: 100;
+    background-color: transparent;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(3px);
+    }
+    
+    .number-icon {
+      width: 80px;
+      height: 80px;
+      margin-right: 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    }
+    
+    .number-text {
+      font-size: 40px;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      letter-spacing: 1px;
+    }
+  }
+  
+  // 返回按钮（也相应向下移动）
+  .back-button {
+    position: absolute;
+    top: 170px;
+    left: 60px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    z-index: 100;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s ease;
+    
+    &:active {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(3px);
+    }
+    
+    .back-arrow {
+      font-size: 36px;
+      color: #FFFFFF;
+      font-weight: bold;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .back-text {
+      display: none;
+    }
+  }
+  
+  // 隐藏的调试区域
+  .secret-debug-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    opacity: 0;
+  }
+  
+  // 点击区域 - 也需要相应调整top位置
+  .click-area {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    
+    // 默认状态：透明但可点击
+    opacity: 0;
+    
+    // 调试模式下的样式
+    &.debug-area {
+      opacity: 0.4;
+      background-color: rgba(255, 75, 75, 0.45);
+      border: 3px solid rgba(255, 75, 75, 0.9);
+      border-radius: 10px;
+      
+      .area-debug-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        pointer-events: none;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        z-index: 11;
+        text-align: center;
+        
+        .area-name {
+          display: block;
+          font-weight: bold;
+          color: #ffcc00;
+        }
+        
+        .area-path {
+          display: block;
+          font-size: 9px;
+          color: #888;
+          margin-top: 2px;
+        }
+      }
+    }
+    
+    // 激活状态（点击时）
+    &.active {
+      opacity: 0.6 !important;
+      background-color: rgba(0, 160, 255, 0.7) !important;
+      border-color: rgba(0, 160, 255, 1) !important;
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 160, 255, 0.5);
+    }
+  }
+  
+  // 加载提示
+  .loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+    .loading-text {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 25px;
+      letter-spacing: 3px;
+      font-weight: 300;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+    }
+    
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top-color: #ffcc00;
+      border-radius: 50%;
+      animation: spin 1.2s ease-in-out infinite;
+    }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  // 调试提示样式
+  .debug-hint {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    z-index: 100;
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    animation: blinkHint 2s infinite;
+    
+    @keyframes blinkHint {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+  }
+  
+  // ============== 底部导航栏 - NOW MATCHES xingyouhui/index.scss ==============
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 0;
+    z-index: 100;
+    
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 14px 28px;
+      border-radius: 15px;
+      transition: all 0.2s ease;
+      
+      &:active:not(.active) {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .nav-icon {
+        font-size: 32px;
+        margin-bottom: 6px;
+      }
+      
+      .nav-text {
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+  
+  // 响应式调整
+  @media (max-width: 768px) {
+    .mountain-image {
+      width: 92%;
+      max-height: 70vh;
+      top: 140px;
+    }
+    
+    .user-info-block {
+      top: 270px;
+      left: 15px;
+      padding: 15px 20px;
+      border-width: 3px;
+      
+      .user-icon {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+      }
+      
+      .user-text {
+        font-size: 30px;
+      }
+    }
+    
+    .number-info-block {
+      top: 270px;
+      right: 15px;
+      padding: 15px 20px;
+      border-width: 3px;
+      
+      .number-icon {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+      }
+      
+      .number-text {
+        font-size: 30px;
+      }
+    }
+    
+    .back-button {
+      top: 150px;
+      left: 50px;
+      width: 55px;
+      height: 55px;
+      
+      .back-arrow {
+        font-size: 32px;
+      }
+    }
+    
+    .bird-container {
+      left: 5px;
+      bottom: 40px;
+      
+      .bird-image {
+        width: 380px;
+        height: 380px;
+      }
+      
+      &::before {
+        width: 450px;
+        height: 450px;
+      }
+      
+      &::after {
+        width: 520px;
+        height: 520px;
+      }
+    }
+    
+    // Bottom nav: tablet
+    .bottom-nav {
+      padding: 16px 0;
+      
+      .nav-item {
+        padding: 12px 22px;
+        
+        .nav-icon {
+          font-size: 32px;
+        }
+        
+        .nav-text {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mountain-image {
+      top: 125px;
+      max-height: 65vh;
+    }
+    
+    .back-button {
+      top: 135px;
+      left: 40px;
+      width: 50px;
+      height: 50px;
+      
+      .back-arrow {
+        font-size: 28px;
+      }
+    }
+    
+    .user-info-block,
+    .number-info-block {
+      top: 240px;
+      padding: 12px 16px;
+      border-width: 2px;
+      
+      .user-icon,
+      .number-icon {
+        width: 50px;
+        height: 50px;
+        margin-right: 12px;
+      }
+      
+      .user-text,
+      .number-text {
+        font-size: 24px;
+      }
+    }
+    
+    .bird-container {
+      left: 0px;
+      bottom: 25px;
+      
+      .bird-image {
+        width: 320px;
+        height: 320px;
+      }
+      
+      &::before {
+        width: 380px;
+        height: 380px;
+      }
+      
+      &::after {
+        width: 440px;
+        height: 440px;
+      }
+    }
+    
+    // Bottom nav: mobile
+    .bottom-nav {
+      padding: 13px 0;
+      
+      .nav-item {
+        padding: 10px 18px;
+        
+        .nav-icon {
+          font-size: 32px;
+        }
+        
+        .nav-text {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  
+  // 超小屏幕额外调整
+  @media (max-height: 700px) {
+    .mountain-image {
+      max-height: 65vh;
+      top: 140px;
+    }
+    
+    .back-button {
+      top: 150px;
+    }
+    
+    .user-info-block,
+    .number-info-block {
+      top: 220px;
+    }
+    
+    .bird-container {
+      bottom: 25px;
+    }
+    
+    .bottom-nav {
+      padding: 10px 0;
+      
+      .nav-item {
+        padding: 8px 14px;
+        
+        .nav-icon {
+          font-size: 28px;
+        }
+        
+        .nav-text {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  // 超宽屏幕优化
+  @media (min-width: 1200px) {
+    .mountain-image {
+      top: 200px;
+      max-height: 70vh;
+    }
+    
+    .user-info-block,
+    .number-info-block {
+      top: 350px;
+    }
+    
+    .back-button {
+      top: 200px;
+    }
+    
+    .bird-container {
+      left: 20px;
+      bottom: 80px;
+      
+      .bird-image {
+        width: 550px;
+        height: 550px;
+      }
+      
+      &::before {
+        width: 660px;
+        height: 660px;
+      }
+      
+      &::after {
+        width: 750px;
+        height: 750px;
+      }
+    }
+    
+    // Bottom nav: large screens
+    .bottom-nav {
+      padding: 20px 0;
+      
+      .nav-item {
+        padding: 14px 28px;
+        
+        .nav-icon {
+          font-size: 32px;
+        }
+        
+        .nav-text {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  
+  // 超小宽度屏幕（比如竖屏的平板）
+  @media (max-width: 360px) {
+    .bottom-nav {
+      padding: 10px 0;
+      
+      .nav-item {
+        padding: 8px 12px;
+        
+        .nav-icon {
+          font-size: 32px;
+        }
+        
+        .nav-text {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
