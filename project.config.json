@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "dist/",
-  "projectname": "tcz-new-start-app",
-  "description": "abc",
+  "projectname": "weapp-demo-2026",
+  "description": "TCZ we app 2026 Feb 3rd ",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,
@@ -35,6 +35,5 @@
     "ignore": [],
     "include": []
   },
-  "editorSetting": {},
-  "libVersion": "2.30.4"
+  "editorSetting": {}
 }

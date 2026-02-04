@@ -1,0 +1,288 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/constellation/index.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.constellation-container {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #FFFFFF;
+}
+.constellation-container.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  font-size: 18rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+.constellation-container .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.constellation-container .header-nav {
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  z-index: 10;
+}
+.constellation-container .header-nav .back-button {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  margin-top: 20rpx;
+}
+.constellation-container .header-nav .back-button .back-arrow {
+  font-size: 36rpx;
+  color: #FFFFFF;
+}
+.constellation-container .header-nav .title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.constellation-container .header-nav .nav-placeholder {
+  width: 60rpx;
+}
+.constellation-container .main-content {
+  position: relative;
+  z-index: 1;
+  padding: 40rpx 20rpx 120rpx;
+  display: flex;
+  flex-direction: column;
+}
+.constellation-container .greeting-section {
+  text-align: left;
+  margin-bottom: 40rpx;
+  margin-top: 90rpx;
+}
+.constellation-container .greeting-section .greeting-text {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8rpx;
+  display: block;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+}
+.constellation-container .greeting-section .time-info {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0.9;
+}
+.constellation-container .constellation-image-container {
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.constellation-container .constellation-image-container .constellation-image {
+  width: 180rpx;
+  height: 180rpx;
+  object-fit: contain;
+}
+.constellation-container .constellation-names {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.constellation-container .constellation-names .chinese-name {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 5rpx;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.4);
+}
+.constellation-container .constellation-names .english-name {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  letter-spacing: 3rpx;
+  text-transform: uppercase;
+}
+.constellation-container .description-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  margin-bottom: 40rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10rpx);
+}
+.constellation-container .description-section .description-text {
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 20rpx;
+  text-align: justify;
+}
+.constellation-container .description-section .view-more {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12rpx 0;
+  border-top: 1rpx solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+.constellation-container .description-section .view-more:active {
+  opacity: 0.7;
+}
+.constellation-container .description-section .view-more .view-more-text {
+  font-size: 20rpx;
+  color: #FFD700;
+  font-weight: 500;
+  margin-right: 10rpx;
+}
+.constellation-container .description-section .view-more .arrow {
+  font-size: 20rpx;
+  color: #FFD700;
+  font-weight: bold;
+  margin-top: -2rpx;
+}
+.constellation-container .luck-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10rpx);
+}
+.constellation-container .luck-section .luck-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 5rpx;
+  display: block;
+}
+.constellation-container .luck-section .luck-date {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30rpx;
+  display: block;
+}
+.constellation-container .luck-section .luck-progress-container .luck-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  margin-bottom: 25rpx;
+}
+.constellation-container .luck-section .luck-progress-container .luck-label-row .luck-label {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+.constellation-container .luck-section .luck-progress-container .luck-label-row .luck-percent {
+  font-size: 40rpx;
+  font-weight: 800;
+  color: #FFD700;
+}
+.constellation-container .luck-section .luck-progress-container .luck-progress {
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.constellation-container .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20rpx);
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 15rpx 0;
+  z-index: 100;
+}
+.constellation-container .bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16rpx 32rpx;
+  border-radius: 15rpx;
+  transition: all 0.2s ease;
+}
+.constellation-container .bottom-nav .nav-item.active {
+  background: rgba(255, 215, 0, 0.15);
+}
+.constellation-container .bottom-nav .nav-item.active .nav-text {
+  color: #FFD700;
+}
+.constellation-container .bottom-nav .nav-item:active:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+}
+.constellation-container .bottom-nav .nav-item .nav-icon {
+  font-size: 36rpx;
+  margin-bottom: 5rpx;
+}
+.constellation-container .bottom-nav .nav-item .nav-text {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 375px) {
+  .constellation-container .constellation-container .main-content {
+    padding: 30rpx 15rpx 110rpx;
+  }
+  .constellation-container .constellation-container .greeting-section {
+    margin-top: 85rpx;
+  }
+  .constellation-container .constellation-container .greeting-section .greeting-text {
+    font-size: 38rpx;
+  }
+  .constellation-container .constellation-container .constellation-image-container {
+    height: 200rpx;
+  }
+  .constellation-container .constellation-container .constellation-image-container .constellation-image {
+    width: 200rpx;
+    height: 200rpx;
+  }
+  .constellation-container .constellation-container .constellation-names .chinese-name {
+    font-size: 45rpx;
+  }
+  .constellation-container .constellation-container .constellation-names .english-name {
+    font-size: 30rpx;
+    letter-spacing: 2rpx;
+  }
+  .constellation-container .constellation-container .description-section {
+    padding: 30rpx;
+  }
+  .constellation-container .constellation-container .description-section .description-text {
+    font-size: 28rpx;
+  }
+  .constellation-container .constellation-container .description-section .view-more {
+    justify-content: flex-end;
+  }
+  .constellation-container .constellation-container .luck-section {
+    padding: 30rpx;
+  }
+  .constellation-container .constellation-container .luck-section .luck-title {
+    font-size: 34rpx;
+  }
+  .constellation-container .constellation-container .luck-section .luck-date {
+    font-size: 25rpx;
+  }
+  .constellation-container .constellation-container .luck-section .luck-progress-container .luck-label-row .luck-label {
+    font-size: 27rpx;
+  }
+  .constellation-container .constellation-container .luck-section .luck-percent {
+    font-size: 38rpx;
+  }
+  .constellation-container .constellation-container .bottom-nav .nav-item {
+    padding: 12rpx 24rpx;
+  }
+  .constellation-container .constellation-container .bottom-nav .nav-item .nav-icon {
+    font-size: 30rpx;
+  }
+}

@@ -2,15 +2,15 @@
 import React from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-import welcomeBg from '../../images/welcome-bg.png'
-import welcomeButton from '../../images/welcome-button.png'
+import welcomeBg from '../../assets/images/welcome-bg.png'
+import welcomeButton from '../../assets/images/welcome-button.png'
 import './index.scss'
 
 const WelcomePage: React.FC = () => {
   const handleStartJourney = () => {
     Taro.navigateTo({
-      // url: '/pages/register/index'
-       url: '/pages/constellation/index'
+      url: '/pages/register/index'
+      // url: '/pages/constellation/index'
     })
   }
 

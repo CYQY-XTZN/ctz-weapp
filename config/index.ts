@@ -1,4 +1,6 @@
 // config/index.js
+const path = require('path')
+
 const config = {
   projectName: 'tcz-new-project',
   date: '2023-12-22',
@@ -21,7 +23,7 @@ const config = {
   compiler: {
     type: 'webpack5',
     prebundle: {
-      enable: false  // 关闭预编译，避免兼容性问题
+      enable: false
     }
   },
   mini: {
@@ -61,6 +63,12 @@ const config = {
         }
       }
     }
+  },
+
+  // ✅ 关键：添加 alias 让 Webpack 能解析 @/images/
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src'),
+    '@/images': path.resolve(__dirname, '..', 'src/images'),
   }
 }
 

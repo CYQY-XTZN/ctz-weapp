@@ -1,0 +1,675 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/profile/index.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.profile-page {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  font-family: "Alibaba PuHuiTi", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: #FFFFFF;
+  padding-bottom: 140rpx;
+}
+.profile-page .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+}
+.profile-page .user-card {
+  background: transparent !important;
+  margin: 180rpx 32rpx 60rpx;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.profile-page .user-card .user-avatar-section {
+  margin-bottom: 60rpx;
+  position: relative;
+}
+.profile-page .user-card .user-avatar-section .avatar-container {
+  position: relative;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.profile-page .user-card .user-avatar-section .avatar-container:active {
+  transform: scale(0.98);
+}
+.profile-page .user-card .user-avatar-section .avatar-container:active .avatar-overlay {
+  opacity: 0.9;
+}
+.profile-page .user-card .user-avatar-section .avatar-container .user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6rpx solid rgba(255, 255, 255, 0.3);
+  background-color: #fff;
+  object-fit: cover;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.3), 0 0 50rpx rgba(255, 255, 255, 0.1);
+}
+.profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-icon {
+  font-size: 40rpx;
+  margin-bottom: 8rpx;
+}
+.profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-text {
+  color: #FFFFFF;
+  font-size: 24rpx;
+  font-weight: 500;
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.5);
+}
+.profile-page .user-card .user-info-section {
+  text-align: center;
+  margin-bottom: 70rpx;
+}
+.profile-page .user-card .user-info-section .username-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+}
+.profile-page .user-card .user-info-section .username-container:active {
+  opacity: 0.7;
+}
+.profile-page .user-card .user-info-section .username {
+  display: block;
+  font-size: 56rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20rpx;
+  text-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.7), 0 0 20rpx rgba(255, 255, 255, 0.2);
+}
+.profile-page .user-card .user-info-section .bio {
+  display: block;
+  font-size: 36rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+.profile-page .user-card .user-info-section .edit-icon {
+  font-size: 14rpx;
+  color: #666;
+  cursor: pointer;
+}
+.profile-page .user-card .user-stats-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.profile-page .user-card .user-stats-section .stats-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10rpx);
+  border-radius: 25rpx;
+  padding: 40rpx 20rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.2), inset 0 0 20rpx rgba(255, 255, 255, 0.05);
+  width: 90%;
+  max-width: 900rpx;
+}
+.profile-page .user-card .user-stats-section .stats-box .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 50rpx;
+  flex: 1;
+}
+.profile-page .user-card .user-stats-section .stats-box .stat-item .stat-number {
+  font-size: 52rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 10rpx;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.6), 0 0 20rpx rgba(255, 255, 255, 0.2);
+}
+.profile-page .user-card .user-stats-section .stats-box .stat-item .stat-label {
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.4);
+}
+.profile-page .user-card .user-stats-section .stats-box .stat-divider {
+  width: 1rpx;
+  height: 80rpx;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.2) 80%, transparent 100%);
+  margin: 0 10rpx;
+}
+.profile-page .vertical-menu {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10rpx);
+  margin: 0 32rpx 120rpx;
+  border-radius: 30rpx;
+  padding: 35rpx 40rpx;
+  position: relative;
+  z-index: 1;
+  border: 1rpx solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.2), inset 0 0 20rpx rgba(255, 255, 255, 0.05);
+}
+.profile-page .vertical-menu .menu-item {
+  display: flex;
+  align-items: center;
+  padding: 35rpx 0;
+  cursor: pointer;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+.profile-page .vertical-menu .menu-item:last-child {
+  border-bottom: none;
+}
+.profile-page .vertical-menu .menu-item:active {
+  opacity: 0.7;
+  transform: translateX(10rpx);
+}
+.profile-page .vertical-menu .menu-item .menu-icon {
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 40rpx;
+  filter: drop-shadow(0 2rpx 4rpx rgba(0, 0, 0, 0.3));
+  object-fit: contain;
+}
+.profile-page .vertical-menu .menu-item .menu-text {
+  font-size: 44rpx;
+  color: #FFFFFF;
+  font-weight: 500;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.4);
+}
+.profile-page .vertical-menu .menu-item.logout-item .menu-icon {
+  filter: drop-shadow(0 2rpx 4rpx rgba(0, 0, 0, 0.3)) brightness(1.2) sepia(1) hue-rotate(-50deg) saturate(3);
+}
+.profile-page .vertical-menu .menu-item.logout-item .menu-text {
+  color: #ff6b6b;
+}
+.profile-page .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: blur(20rpx);
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 22rpx 0;
+  z-index: 100;
+  min-height: 130rpx;
+}
+.profile-page .bottom-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+  z-index: -1;
+}
+.profile-page .bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18rpx 36rpx;
+  border-radius: 22rpx;
+  transition: all 0.3s ease;
+  flex: 1;
+  margin: 0 14rpx;
+  cursor: pointer;
+}
+.profile-page .bottom-nav .nav-item.active {
+  background: rgba(255, 215, 0, 0.25);
+  box-shadow: 0 0 22rpx rgba(255, 215, 0, 0.35), inset 0 0 12rpx rgba(255, 255, 255, 0.12);
+}
+.profile-page .bottom-nav .nav-item.active .nav-text {
+  color: #FFD700;
+  font-weight: 600;
+  text-shadow: 0 0 12rpx rgba(255, 215, 0, 0.6), 0 0 25rpx rgba(255, 215, 0, 0.25);
+}
+.profile-page .bottom-nav .nav-item.active .nav-icon {
+  transform: scale(1.15);
+  text-shadow: 0 0 18rpx rgba(255, 215, 0, 0.8);
+}
+.profile-page .bottom-nav .nav-item:active:not(.active) {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(0.95);
+}
+.profile-page .bottom-nav .nav-item .nav-icon {
+  font-size: 52rpx !important;
+  margin-bottom: 8rpx !important;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 3rpx 8rpx rgba(0, 0, 0, 0.35));
+  line-height: 1;
+}
+.profile-page .bottom-nav .nav-item .nav-text {
+  font-size: 35rpx !important;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-shadow: 0 1rpx 5rpx rgba(0, 0, 0, 0.45), 0 0 6rpx rgba(255, 255, 255, 0.18);
+  transition: color 0.3s ease;
+  line-height: 1.1;
+  letter-spacing: 0.4rpx;
+}
+@media (max-width: 768px) {
+  .profile-page {
+    padding-bottom: 125rpx;
+  }
+  .profile-page .user-card {
+    margin: 160rpx 24rpx 50rpx;
+  }
+  .profile-page .user-card .user-avatar-section {
+    margin-bottom: 50rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container {
+    width: 160rpx;
+    height: 160rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .user-avatar {
+    border-width: 5rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-icon {
+    font-size: 36rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-text {
+    font-size: 22rpx;
+  }
+  .profile-page .user-card .user-info-section {
+    margin-bottom: 60rpx;
+  }
+  .profile-page .user-card .user-info-section .username {
+    font-size: 48rpx;
+  }
+  .profile-page .user-card .user-info-section .bio {
+    font-size: 32rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box {
+    padding: 32rpx 15rpx;
+    border-radius: 22rpx;
+    width: 95%;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item {
+    padding: 0 40rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-number {
+    font-size: 46rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-label {
+    font-size: 28rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-divider {
+    height: 70rpx;
+    margin: 0 8rpx;
+  }
+  .profile-page .vertical-menu {
+    margin: 0 24rpx 110rpx;
+    padding: 30rpx 30rpx;
+    border-radius: 25rpx;
+  }
+  .profile-page .vertical-menu .menu-item {
+    padding: 30rpx 0;
+  }
+  .profile-page .vertical-menu .menu-item .menu-icon {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 35rpx;
+  }
+  .profile-page .vertical-menu .menu-item .menu-text {
+    font-size: 38rpx;
+  }
+  .profile-page .bottom-nav {
+    padding: 16rpx 0;
+    min-height: 110rpx;
+  }
+  .profile-page .bottom-nav .nav-item {
+    padding: 13rpx 26rpx;
+    margin: 0 10rpx;
+    border-radius: 18rpx;
+  }
+  .profile-page .bottom-nav .nav-item .nav-icon {
+    font-size: 44rpx !important;
+    margin-bottom: 6rpx !important;
+  }
+  .profile-page .bottom-nav .nav-item .nav-text {
+    font-size: 30rpx !important;
+  }
+}
+@media (max-width: 480px) {
+  .profile-page {
+    padding-bottom: 105rpx;
+  }
+  .profile-page .user-card {
+    margin: 140rpx 20rpx 40rpx;
+  }
+  .profile-page .user-card .user-avatar-section {
+    margin-bottom: 40rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container {
+    width: 140rpx;
+    height: 140rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .user-avatar {
+    border-width: 4rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-icon {
+    font-size: 32rpx;
+    margin-bottom: 6rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-text {
+    font-size: 20rpx;
+  }
+  .profile-page .user-card .user-info-section {
+    margin-bottom: 50rpx;
+  }
+  .profile-page .user-card .user-info-section .username {
+    font-size: 42rpx;
+    margin-bottom: 15rpx;
+  }
+  .profile-page .user-card .user-info-section .bio {
+    font-size: 28rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box {
+    padding: 28rpx 10rpx;
+    border-radius: 20rpx;
+    width: 100%;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item {
+    padding: 0 30rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-number {
+    font-size: 40rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-label {
+    font-size: 24rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-divider {
+    height: 65rpx;
+    margin: 0 5rpx;
+  }
+  .profile-page .vertical-menu {
+    margin: 0 20rpx 100rpx;
+    padding: 25rpx 25rpx;
+    border-radius: 20rpx;
+  }
+  .profile-page .vertical-menu .menu-item {
+    padding: 28rpx 0;
+  }
+  .profile-page .vertical-menu .menu-item .menu-icon {
+    width: 44rpx;
+    height: 44rpx;
+    margin-right: 30rpx;
+  }
+  .profile-page .vertical-menu .menu-item .menu-text {
+    font-size: 34rpx;
+  }
+  .profile-page .bottom-nav {
+    padding: 13rpx 0;
+    min-height: 90rpx;
+    backdrop-filter: blur(15rpx);
+  }
+  .profile-page .bottom-nav .nav-item {
+    padding: 10rpx 18rpx;
+    margin: 0 6rpx;
+    border-radius: 16rpx;
+  }
+  .profile-page .bottom-nav .nav-item .nav-icon {
+    font-size: 38rpx !important;
+    margin-bottom: 4rpx !important;
+  }
+  .profile-page .bottom-nav .nav-item .nav-text {
+    font-size: 26rpx !important;
+  }
+}
+@media (max-height: 700px) {
+  .profile-page .user-card {
+    margin: 120rpx 20rpx 30rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container {
+    width: 120rpx;
+    height: 120rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-icon {
+    font-size: 28rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-text {
+    font-size: 18rpx;
+  }
+  .profile-page .user-card .user-info-section .username {
+    font-size: 38rpx;
+  }
+  .profile-page .user-card .user-info-section .bio {
+    font-size: 26rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box {
+    padding: 24rpx 8rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item {
+    padding: 0 25rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-number {
+    font-size: 36rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-label {
+    font-size: 22rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-divider {
+    height: 60rpx;
+  }
+  .profile-page .vertical-menu {
+    margin: 0 20rpx 90rpx;
+  }
+  .profile-page .vertical-menu .menu-item {
+    padding: 22rpx 0;
+  }
+  .profile-page .vertical-menu .menu-item .menu-icon {
+    width: 40rpx;
+    height: 40rpx;
+  }
+  .profile-page .vertical-menu .menu-item .menu-text {
+    font-size: 30rpx;
+  }
+  .profile-page .bottom-nav {
+    min-height: 80rpx;
+    padding: 10rpx 0;
+  }
+  .profile-page .bottom-nav .nav-item {
+    padding: 8rpx 14rpx;
+  }
+  .profile-page .bottom-nav .nav-item .nav-icon {
+    font-size: 34rpx !important;
+    margin-bottom: 3rpx !important;
+  }
+  .profile-page .bottom-nav .nav-item .nav-text {
+    font-size: 22rpx !important;
+  }
+}
+@media (min-width: 1200px) {
+  .profile-page {
+    padding-bottom: 185rpx;
+  }
+  .profile-page .user-card {
+    margin: 220rpx 40rpx 80rpx;
+  }
+  .profile-page .user-card .user-avatar-section {
+    margin-bottom: 70rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container {
+    width: 220rpx;
+    height: 220rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .user-avatar {
+    border-width: 8rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-icon {
+    font-size: 48rpx;
+    margin-bottom: 12rpx;
+  }
+  .profile-page .user-card .user-avatar-section .avatar-container .avatar-overlay .change-text {
+    font-size: 28rpx;
+  }
+  .profile-page .user-card .user-info-section {
+    margin-bottom: 90rpx;
+  }
+  .profile-page .user-card .user-info-section .username {
+    font-size: 64rpx;
+    margin-bottom: 30rpx;
+  }
+  .profile-page .user-card .user-info-section .bio {
+    font-size: 44rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box {
+    padding: 50rpx 30rpx;
+    border-radius: 35rpx;
+    width: 85%;
+    max-width: 1000rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item {
+    padding: 0 70rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-number {
+    font-size: 60rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-item .stat-label {
+    font-size: 38rpx;
+  }
+  .profile-page .user-card .user-stats-section .stats-box .stat-divider {
+    height: 90rpx;
+    margin: 0 15rpx;
+  }
+  .profile-page .vertical-menu {
+    margin: 0 40rpx 140rpx;
+    padding: 45rpx 50rpx;
+    border-radius: 40rpx;
+  }
+  .profile-page .vertical-menu .menu-item {
+    padding: 45rpx 0;
+  }
+  .profile-page .vertical-menu .menu-item .menu-icon {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 50rpx;
+  }
+  .profile-page .vertical-menu .menu-item .menu-text {
+    font-size: 52rpx;
+  }
+  .profile-page .bottom-nav {
+    min-height: 160rpx;
+    padding: 32rpx 0;
+  }
+  .profile-page .bottom-nav .nav-item {
+    padding: 28rpx 56rpx;
+    margin: 0 22rpx;
+    border-radius: 32rpx;
+  }
+  .profile-page .bottom-nav .nav-item .nav-icon {
+    font-size: 68rpx !important;
+    margin-bottom: 14rpx !important;
+  }
+  .profile-page .bottom-nav .nav-item .nav-text {
+    font-size: 48rpx !important;
+  }
+}
+.profile-page {
+  /* 编辑用户名弹窗样式 */
+}
+.profile-page .edit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.profile-page .edit-modal {
+  background-color: #fff;
+  border-radius: 20rpx;
+  width: 85%;
+  max-width: 500rpx; /* ← 增大最大宽度 */
+  overflow: hidden;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+.profile-page .edit-modal-header {
+  padding: 24rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  text-align: center;
+}
+.profile-page .edit-modal-title {
+  font-size: 20rpx;
+  font-weight: 600;
+  color: #333;
+}
+.profile-page .edit-modal-content {
+  padding: 24rpx 20rpx;
+}
+.profile-page .user-name-input {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  padding: 16rpx 20rpx;
+  font-size: 18rpx;
+  width: 100%;
+  box-sizing: border-box;
+  color: #333; /* ← 关键：显式设置深色文字，解决白色看不清问题 */
+  background-color: #fff;
+}
+.profile-page .user-name-input:focus {
+  border-color: rgba(108, 92, 231, 0.85);
+  outline: none;
+  box-shadow: 0 0 0 2rpx rgba(76, 175, 80, 0.2);
+}
+.profile-page .input-tips {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 14rpx;
+  color: #888;
+  text-align: right;
+}
+.profile-page .edit-modal-footer {
+  display: flex;
+  border-top: 1rpx solid #f0f0f0;
+}
+.profile-page .edit-button {
+  flex: 1;
+  padding: 18rpx;
+  text-align: center;
+  cursor: pointer;
+  font-size: 18rpx;
+}
+.profile-page .edit-button:active {
+  opacity: 0.7;
+}
+.profile-page .edit-button.cancel {
+  border-right: 1rpx solid #f0f0f0;
+  color: #666;
+}
+.profile-page .edit-button.confirm {
+  background-color: rgba(108, 92, 231, 0.85);
+  color: #fff;
+  font-weight: bold;
+}

@@ -1,0 +1,37 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/constellation-detail/index.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.constellation-detail-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.constellation-detail-container .header {
+  height: 60rpx;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+.constellation-detail-container .header .back-btn {
+  color: #FFD700;
+  font-size: 16rpx;
+  padding: 8rpx 12rpx;
+  border-radius: 4rpx;
+  background: rgba(255, 215, 0, 0.1);
+  cursor: pointer;
+}
+.constellation-detail-container .header .title {
+  flex: 1;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 18rpx;
+  font-weight: 500;
+}
+.constellation-detail-container .api-iframe {
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 60rpx);
+}

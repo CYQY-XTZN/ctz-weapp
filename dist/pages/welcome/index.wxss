@@ -1,0 +1,327 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/welcome/index.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.welcome-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 180rpx;
+  max-width: 1400rpx;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  border-radius: 90rpx;
+  overflow: hidden;
+}
+
+.button-container:active {
+  transform: translateX(-50%) scale(0.96) translateY(2rpx);
+}
+
+.button-container:hover {
+  transform: translateX(-50%) translateY(-12rpx) scale(1.04);
+}
+
+.button-container:hover::before {
+  opacity: 1;
+  filter: blur(100rpx);
+  transform: translateX(-50%) scale(1.1);
+}
+
+.button-container:hover .button-image {
+  filter: drop-shadow(0 60rpx 200rpx rgb(0, 0, 0));
+  transform: scale(1.04);
+}
+
+.button-container::before {
+  content: "";
+  position: absolute;
+  bottom: -12rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 200rpx;
+  border-radius: 90rpx;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.18) 50%, rgba(255, 255, 255, 0.04) 100%);
+  filter: blur(95rpx);
+  opacity: 0.85;
+  z-index: -1;
+  transition: all 0.5s ease;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.65;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    opacity: 0.65;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.button-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+  border-radius: 90rpx;
+  box-shadow: 0 55rpx 190rpx rgba(0, 0, 0, 0.9), 0 0 0 7rpx rgba(255, 255, 255, 0.4), inset 0 0 25rpx rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 55rpx 190rpx rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+@media (max-width: 1800px) {
+  .button-container {
+    height: 170rpx;
+    max-width: 1300rpx;
+  }
+}
+
+@media (max-width: 1600px) {
+  .button-container {
+    height: 160rpx;
+    max-width: 1200rpx;
+    border-radius: 85rpx;
+  }
+  .button-container::before {
+    height: 180rpx;
+    border-radius: 85rpx;
+  }
+  .button-image {
+    border-radius: 85rpx;
+  }
+}
+
+@media (max-width: 1400px) {
+  .button-container {
+    height: 150rpx;
+    max-width: 1100rpx;
+    border-radius: 80rpx;
+  }
+  .button-container::before {
+    height: 170rpx;
+    border-radius: 80rpx;
+    filter: blur(85rpx);
+  }
+  .button-image {
+    border-radius: 80rpx;
+    box-shadow: 0 50rpx 180rpx rgba(0, 0, 0, 0.85), 0 0 0 6rpx rgba(255, 255, 255, 0.35);
+  }
+}
+
+@media (max-width: 1200px) {
+  .button-container {
+    height: 140rpx;
+    max-width: 1000rpx;
+    border-radius: 75rpx;
+    bottom: 22%;
+  }
+  .button-container::before {
+    height: 160rpx;
+    border-radius: 75rpx;
+    filter: blur(80rpx);
+  }
+  .button-image {
+    border-radius: 75rpx;
+  }
+}
+
+@media (max-width: 1024px) {
+  .button-container {
+    height: 135rpx;
+    max-width: 900rpx;
+    border-radius: 70rpx;
+    width: 88%;
+  }
+  .button-container::before {
+    height: 155rpx;
+    border-radius: 70rpx;
+    filter: blur(75rpx);
+  }
+  .button-image {
+    border-radius: 70rpx;
+  }
+}
+
+@media (max-width: 900px) {
+  .button-container {
+    height: 130rpx;
+    max-width: 800rpx;
+    border-radius: 65rpx;
+  }
+  .button-container::before {
+    height: 150rpx;
+    border-radius: 65rpx;
+    filter: blur(70rpx);
+  }
+  .button-image {
+    border-radius: 65rpx;
+    box-shadow: 0 45rpx 170rpx rgba(0, 0, 0, 0.8), 0 0 0 5rpx rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    height: 120rpx;
+    max-width: 700rpx;
+    border-radius: 60rpx;
+    width: 90%;
+  }
+  .button-container::before {
+    height: 140rpx;
+    border-radius: 60rpx;
+    filter: blur(65rpx);
+  }
+  .button-image {
+    border-radius: 60rpx;
+  }
+}
+
+@media (max-width: 700px) {
+  .button-container {
+    height: 110rpx;
+    width: 92%;
+    border-radius: 55rpx;
+  }
+  .button-image {
+    border-radius: 55rpx;
+  }
+}
+
+@media (max-width: 600px) {
+  .button-container {
+    height: 105rpx;
+    border-radius: 50rpx;
+    bottom: 24%;
+    width: 94%;
+  }
+  .button-container::before {
+    height: 130rpx;
+    border-radius: 50rpx;
+    filter: blur(60rpx);
+  }
+  .button-image {
+    border-radius: 50rpx;
+    box-shadow: 0 40rpx 150rpx rgba(0, 0, 0, 0.75), 0 0 0 4rpx rgba(255, 255, 255, 0.25);
+  }
+}
+
+@media (max-width: 500px) {
+  .button-container {
+    height: 95rpx;
+    border-radius: 45rpx;
+    width: 96%;
+  }
+  .button-container::before {
+    height: 120rpx;
+    border-radius: 45rpx;
+    filter: blur(55rpx);
+  }
+  .button-image {
+    border-radius: 45rpx;
+  }
+}
+
+@media (max-width: 450px) {
+  .button-container {
+    height: 90rpx;
+    border-radius: 40rpx;
+  }
+  .button-image {
+    border-radius: 40rpx;
+  }
+}
+
+@media (max-width: 400px) {
+  .button-container {
+    height: 85rpx;
+    border-radius: 38rpx;
+  }
+  .button-image {
+    border-radius: 38rpx;
+    box-shadow: 0 35rpx 140rpx rgba(0, 0, 0, 0.7), 0 0 0 3rpx rgba(255, 255, 255, 0.22);
+  }
+  .button-container::before {
+    height: 110rpx;
+    border-radius: 38rpx;
+    filter: blur(50rpx);
+  }
+}
+
+@media (max-width: 360px) {
+  .button-container {
+    height: 80rpx;
+    border-radius: 35rpx;
+    width: 98%;
+  }
+  .button-image {
+    border-radius: 35rpx;
+  }
+  .button-container::before {
+    height: 105rpx;
+    border-radius: 35rpx;
+    filter: blur(45rpx);
+  }
+}
+
+@media (max-width: 320px) {
+  .button-container {
+    height: 75rpx;
+    border-radius: 32rpx;
+  }
+  .button-image {
+    border-radius: 32rpx;
+  }
+  .button-container::before {
+    height: 100rpx;
+    border-radius: 32rpx;
+    filter: blur(40rpx);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .button-container {
+    height: 85rpx;
+    bottom: 18%;
+    border-radius: 50rpx;
+    width: 80%;
+  }
+  .button-image {
+    border-radius: 50rpx;
+  }
+  .button-container::before {
+    height: 115rpx;
+    border-radius: 50rpx;
+  }
+}

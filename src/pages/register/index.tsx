@@ -7,7 +7,7 @@ import { showToast } from '../../utils'
 import './index.scss'
 
 // 使用require导入本地图片
-const backgroundImage = "https://636c-cloud1-7gg10sorbbbec8d9-1392459764.tcb.qcloud.la/images/register-bg.png?sign=9c7ec5a145a4bb3d230a2d1ef7ab0bec&t=1769576938"
+const backgroundImage = "https://636c-cloud1-7gg10sorbbbec8d9-1392459764.tcb.qcloud.la/images/register-bg.png?"
 const progressBarImage = require('../../assets/images/progress-bar-register.png')
 
 const RegisterPage: React.FC = () => {

@@ -1,0 +1,568 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/mountainPage/index.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.mountain-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.mountain-page .general-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.mountain-page .mountain-image {
+  position: absolute;
+  top: 160rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: auto;
+  max-height: 75vh;
+  z-index: 2;
+  pointer-events: none;
+}
+.mountain-page .bird-container {
+  position: absolute;
+  left: 10rpx;
+  bottom: 60rpx;
+  z-index: 50;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mountain-page .bird-container:active {
+  transform: scale(0.8) translateY(10rpx);
+  opacity: 0.7;
+}
+.mountain-page .bird-container .bird-image {
+  width: 500rpx;
+  height: 500rpx;
+  object-fit: contain;
+  filter: drop-shadow(0 8rpx 25rpx rgba(0, 0, 0, 0.5)) drop-shadow(0 0 40rpx rgba(255, 215, 0, 0.4)) brightness(1.1) contrast(1.1);
+  animation: birdSwing 6s ease-in-out infinite;
+  transform-origin: center 80%;
+}
+@keyframes birdSwing {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translateY(-5rpx) rotate(-12deg) scale(1.02);
+  }
+  40% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  60% {
+    transform: translateY(-5rpx) rotate(8deg) scale(1.02);
+  }
+  80% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+.mountain-page .bird-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 255, 180, 0.4) 0%, rgba(255, 255, 180, 0.2) 30%, rgba(255, 255, 180, 0.1) 50%, transparent 70%);
+  z-index: -1;
+  animation: birdGlow 4s ease-in-out infinite;
+}
+.mountain-page .bird-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680rpx;
+  height: 680rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 240, 150, 0.2) 0%, rgba(255, 240, 150, 0.05) 40%, transparent 70%);
+  z-index: -2;
+  animation: birdGlow 4s ease-in-out infinite 0.5s;
+}
+@keyframes birdGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+.mountain-page .bird-container .bird-image {
+  animation: birdSwing 6s ease-in-out infinite, wingFlap 2s ease-in-out infinite;
+}
+@keyframes wingFlap {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4rpx) rotate(3deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-4rpx) rotate(-3deg);
+  }
+}
+.mountain-page .user-info-block {
+  position: absolute;
+  top: 310rpx;
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 25rpx;
+  border-radius: 40rpx;
+  z-index: 100;
+  background-color: transparent;
+  border: 4rpx solid rgba(255, 255, 255, 0.4);
+}
+.mountain-page .user-info-block:active {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(3rpx);
+}
+.mountain-page .user-info-block .user-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  object-fit: contain;
+  filter: drop-shadow(0 4rpx 12rpx rgba(0, 0, 0, 0.3));
+}
+.mountain-page .user-info-block .user-text {
+  font-size: 40rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.6);
+  letter-spacing: 1rpx;
+}
+.mountain-page .number-info-block {
+  position: absolute;
+  top: 310rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 25rpx;
+  border-radius: 40rpx;
+  z-index: 100;
+  background-color: transparent;
+  border: 4rpx solid rgba(255, 255, 255, 0.4);
+}
+.mountain-page .number-info-block:active {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(3rpx);
+}
+.mountain-page .number-info-block .number-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  object-fit: contain;
+  filter: drop-shadow(0 4rpx 12rpx rgba(0, 0, 0, 0.3));
+}
+.mountain-page .number-info-block .number-text {
+  font-size: 40rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-shadow: 0 4rpx 15rpx rgba(0, 0, 0, 0.6);
+  letter-spacing: 1rpx;
+}
+.mountain-page .back-button {
+  position: absolute;
+  top: 170rpx;
+  left: 60rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  z-index: 100;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+.mountain-page .back-button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(3rpx);
+}
+.mountain-page .back-button .back-arrow {
+  font-size: 36rpx;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.3);
+}
+.mountain-page .back-button .back-text {
+  display: none;
+}
+.mountain-page .secret-debug-area {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 1000;
+  opacity: 0;
+}
+.mountain-page .click-area {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  opacity: 0;
+}
+.mountain-page .click-area.debug-area {
+  opacity: 0.4;
+  background-color: rgba(255, 75, 75, 0.45);
+  border: 3rpx solid rgba(255, 75, 75, 0.9);
+  border-radius: 10rpx;
+}
+.mountain-page .click-area.debug-area .area-debug-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 14rpx;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.4);
+  z-index: 11;
+  text-align: center;
+}
+.mountain-page .click-area.debug-area .area-debug-info .area-name {
+  display: block;
+  font-weight: bold;
+  color: #ffcc00;
+}
+.mountain-page .click-area.debug-area .area-debug-info .area-path {
+  display: block;
+  font-size: 9rpx;
+  color: #888;
+  margin-top: 2rpx;
+}
+.mountain-page .click-area.active {
+  opacity: 0.6 !important;
+  background-color: rgba(0, 160, 255, 0.7) !important;
+  border-color: rgb(0, 160, 255) !important;
+  transform: scale(1.03);
+  box-shadow: 0 0 20rpx rgba(0, 160, 255, 0.5);
+}
+.mountain-page .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.mountain-page .loading-overlay .loading-text {
+  color: white;
+  font-size: 18rpx;
+  margin-bottom: 25rpx;
+  letter-spacing: 3rpx;
+  font-weight: 300;
+  text-shadow: 0 2rpx 10rpx rgba(255, 255, 255, 0.3);
+}
+.mountain-page .loading-overlay .loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.1);
+  border-top-color: #ffcc00;
+  border-radius: 50%;
+  animation: spin 1.2s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mountain-page .debug-hint {
+  position: absolute;
+  top: 70rpx;
+  right: 20rpx;
+  z-index: 100;
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 8rpx 12rpx;
+  border-radius: 10rpx;
+  font-size: 12rpx;
+  animation: blinkHint 2s infinite;
+}
+@keyframes blinkHint {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.mountain-page .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20rpx);
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 18rpx 0;
+  z-index: 100;
+}
+.mountain-page .bottom-nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14rpx 28rpx;
+  border-radius: 15rpx;
+  transition: all 0.2s ease;
+}
+.mountain-page .bottom-nav .nav-item:active:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+}
+.mountain-page .bottom-nav .nav-item .nav-icon {
+  font-size: 32rpx;
+  margin-bottom: 6rpx;
+}
+.mountain-page .bottom-nav .nav-item .nav-text {
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 768px) {
+  .mountain-page .mountain-image {
+    width: 92%;
+    max-height: 70vh;
+    top: 140rpx;
+  }
+  .mountain-page .user-info-block {
+    top: 270rpx;
+    left: 15rpx;
+    padding: 15rpx 20rpx;
+    border-width: 3rpx;
+  }
+  .mountain-page .user-info-block .user-icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 15rpx;
+  }
+  .mountain-page .user-info-block .user-text {
+    font-size: 30rpx;
+  }
+  .mountain-page .number-info-block {
+    top: 270rpx;
+    right: 15rpx;
+    padding: 15rpx 20rpx;
+    border-width: 3rpx;
+  }
+  .mountain-page .number-info-block .number-icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 15rpx;
+  }
+  .mountain-page .number-info-block .number-text {
+    font-size: 30rpx;
+  }
+  .mountain-page .back-button {
+    top: 150rpx;
+    left: 50rpx;
+    width: 55rpx;
+    height: 55rpx;
+  }
+  .mountain-page .back-button .back-arrow {
+    font-size: 32rpx;
+  }
+  .mountain-page .bird-container {
+    left: 5rpx;
+    bottom: 40rpx;
+  }
+  .mountain-page .bird-container .bird-image {
+    width: 380rpx;
+    height: 380rpx;
+  }
+  .mountain-page .bird-container::before {
+    width: 450rpx;
+    height: 450rpx;
+  }
+  .mountain-page .bird-container::after {
+    width: 520rpx;
+    height: 520rpx;
+  }
+  .mountain-page .bottom-nav {
+    padding: 16rpx 0;
+  }
+  .mountain-page .bottom-nav .nav-item {
+    padding: 12rpx 22rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-icon {
+    font-size: 32rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-text {
+    font-size: 22rpx;
+  }
+}
+@media (max-width: 480px) {
+  .mountain-page .mountain-image {
+    top: 125rpx;
+    max-height: 65vh;
+  }
+  .mountain-page .back-button {
+    top: 135rpx;
+    left: 40rpx;
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .mountain-page .back-button .back-arrow {
+    font-size: 28rpx;
+  }
+  .mountain-page .user-info-block,
+  .mountain-page .number-info-block {
+    top: 240rpx;
+    padding: 12rpx 16rpx;
+    border-width: 2rpx;
+  }
+  .mountain-page .user-info-block .user-icon,
+  .mountain-page .user-info-block .number-icon,
+  .mountain-page .number-info-block .user-icon,
+  .mountain-page .number-info-block .number-icon {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 12rpx;
+  }
+  .mountain-page .user-info-block .user-text,
+  .mountain-page .user-info-block .number-text,
+  .mountain-page .number-info-block .user-text,
+  .mountain-page .number-info-block .number-text {
+    font-size: 24rpx;
+  }
+  .mountain-page .bird-container {
+    left: 0rpx;
+    bottom: 25rpx;
+  }
+  .mountain-page .bird-container .bird-image {
+    width: 320rpx;
+    height: 320rpx;
+  }
+  .mountain-page .bird-container::before {
+    width: 380rpx;
+    height: 380rpx;
+  }
+  .mountain-page .bird-container::after {
+    width: 440rpx;
+    height: 440rpx;
+  }
+  .mountain-page .bottom-nav {
+    padding: 13rpx 0;
+  }
+  .mountain-page .bottom-nav .nav-item {
+    padding: 10rpx 18rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-icon {
+    font-size: 32rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-text {
+    font-size: 20rpx;
+  }
+}
+@media (max-height: 700px) {
+  .mountain-page .mountain-image {
+    max-height: 65vh;
+    top: 140rpx;
+  }
+  .mountain-page .back-button {
+    top: 150rpx;
+  }
+  .mountain-page .user-info-block,
+  .mountain-page .number-info-block {
+    top: 220rpx;
+  }
+  .mountain-page .bird-container {
+    bottom: 25rpx;
+  }
+  .mountain-page .bottom-nav {
+    padding: 10rpx 0;
+  }
+  .mountain-page .bottom-nav .nav-item {
+    padding: 8rpx 14rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-icon {
+    font-size: 28rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-text {
+    font-size: 20rpx;
+  }
+}
+@media (min-width: 1200px) {
+  .mountain-page .mountain-image {
+    top: 200rpx;
+    max-height: 70vh;
+  }
+  .mountain-page .user-info-block,
+  .mountain-page .number-info-block {
+    top: 350rpx;
+  }
+  .mountain-page .back-button {
+    top: 200rpx;
+  }
+  .mountain-page .bird-container {
+    left: 20rpx;
+    bottom: 80rpx;
+  }
+  .mountain-page .bird-container .bird-image {
+    width: 550rpx;
+    height: 550rpx;
+  }
+  .mountain-page .bird-container::before {
+    width: 660rpx;
+    height: 660rpx;
+  }
+  .mountain-page .bird-container::after {
+    width: 750rpx;
+    height: 750rpx;
+  }
+  .mountain-page .bottom-nav {
+    padding: 20rpx 0;
+  }
+  .mountain-page .bottom-nav .nav-item {
+    padding: 14rpx 28rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-icon {
+    font-size: 32rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-text {
+    font-size: 24rpx;
+  }
+}
+@media (max-width: 360px) {
+  .mountain-page .bottom-nav {
+    padding: 10rpx 0;
+  }
+  .mountain-page .bottom-nav .nav-item {
+    padding: 8rpx 12rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-icon {
+    font-size: 32rpx;
+  }
+  .mountain-page .bottom-nav .nav-item .nav-text {
+    font-size: 20rpx;
+  }
+}

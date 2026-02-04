@@ -1,0 +1,452 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/mountains/chongqing-mountain/index.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.chongqing-mountain-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.chongqing-mountain-page .general-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.chongqing-mountain-page .page-title {
+  position: absolute;
+  top: 128rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+.chongqing-mountain-page .page-title .title-text {
+  font-size: 52rpx;
+  color: #FFFFFF;
+  font-weight: 900;
+  text-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.6), 0 0 30rpx rgba(255, 255, 255, 0.3);
+  letter-spacing: 4rpx;
+  text-align: center;
+  white-space: nowrap;
+}
+.chongqing-mountain-page .mountain-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: auto;
+  max-height: 90vh;
+  z-index: 2;
+  pointer-events: none;
+}
+.chongqing-mountain-page .back-button {
+  position: absolute;
+  top: 128rpx;
+  left: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  z-index: 100;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+.chongqing-mountain-page .back-button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(3rpx);
+}
+.chongqing-mountain-page .back-button .back-arrow {
+  font-size: 36rpx;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.3);
+}
+.chongqing-mountain-page .action-buttons-container {
+  position: absolute;
+  bottom: 120rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400rpx;
+  display: flex;
+  justify-content: center;
+  gap: 10rpx;
+  padding: 0 40rpx;
+  z-index: 100;
+}
+.chongqing-mountain-page .action-buttons-container .image-button {
+  width: 420rpx;
+  height: 160rpx;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 35rpx;
+  overflow: visible !important;
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.chongqing-mountain-page .action-buttons-container .image-button:hover {
+  transform: scale(1.05);
+}
+.chongqing-mountain-page .action-buttons-container .image-button:active {
+  transform: translateY(8rpx);
+}
+.chongqing-mountain-page .action-buttons-container .image-button .button-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  border-radius: 35rpx;
+  transition: transform 0.3s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  border: none !important;
+  background: none !important;
+}
+.chongqing-mountain-page .action-buttons-container .image-button .button-glow {
+  position: absolute;
+  top: -10rpx;
+  left: -10rpx;
+  right: -10rpx;
+  bottom: -10rpx;
+  border-radius: 45rpx;
+  box-shadow: 0 0 60rpx rgba(97, 79, 255, 0.8), 0 0 0 5rpx rgba(255, 255, 255, 0.7) inset;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.chongqing-mountain-page .action-buttons-container .image-button .ripple-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+.chongqing-mountain-page .action-buttons-container .water-button {
+  transform: translateX(-60rpx);
+}
+.chongqing-mountain-page .action-buttons-container .water-button:hover {
+  transform: translateX(-60rpx) scale(1.05);
+}
+.chongqing-mountain-page .action-buttons-container .water-button:active {
+  transform: translateX(-60rpx) translateY(8rpx);
+}
+.chongqing-mountain-page .action-buttons-container .water-button .button-glow {
+  box-shadow: 0 0 60rpx rgba(0, 150, 255, 0.8), 0 0 0 5rpx rgba(255, 255, 255, 0.7) inset;
+}
+.chongqing-mountain-page .action-buttons-container .weed-button {
+  transform: translateX(60rpx);
+}
+.chongqing-mountain-page .action-buttons-container .weed-button:hover {
+  transform: translateX(60rpx) scale(1.05);
+}
+.chongqing-mountain-page .action-buttons-container .weed-button:active {
+  transform: translateX(60rpx) translateY(8rpx);
+}
+.chongqing-mountain-page .action-buttons-container .weed-button .button-glow {
+  box-shadow: 0 0 60rpx rgba(76, 175, 80, 0.8), 0 0 0 5rpx rgba(255, 255, 255, 0.7) inset;
+}
+.chongqing-mountain-page .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.chongqing-mountain-page .loading-overlay .loading-text {
+  color: white;
+  font-size: 18rpx;
+  margin-bottom: 25rpx;
+  letter-spacing: 3rpx;
+  font-weight: 300;
+  text-shadow: 0 2rpx 10rpx rgba(255, 255, 255, 0.3);
+}
+.chongqing-mountain-page .loading-overlay .loading-spinner {
+  width: 60rpx;
+  height: 60rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.1);
+  border-top-color: #614FFE;
+  border-radius: 50%;
+  animation: spin 1.2s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(30);
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .chongqing-mountain-page .page-title {
+    top: 108rpx;
+  }
+  .chongqing-mountain-page .page-title .title-text {
+    font-size: 42rpx;
+    letter-spacing: 3rpx;
+  }
+  .chongqing-mountain-page .mountain-image {
+    width: 92%;
+  }
+  .chongqing-mountain-page .back-button {
+    top: 108rpx;
+    left: 15rpx;
+    width: 55rpx;
+    height: 55rpx;
+  }
+  .chongqing-mountain-page .back-button .back-arrow {
+    font-size: 32rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container {
+    bottom: 100rpx;
+    max-width: 100%;
+    gap: 5rpx;
+    padding: 0 20rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button {
+    width: 350rpx;
+    height: 135rpx;
+    border-radius: 30rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-image {
+    border-radius: 30rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-glow {
+    border-radius: 40rpx;
+    top: -8rpx;
+    left: -8rpx;
+    right: -8rpx;
+    bottom: -8rpx;
+    box-shadow: 0 0 50rpx rgba(97, 79, 255, 0.8), 0 0 0 4rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button {
+    transform: translateX(-50rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:hover {
+    transform: translateX(-50rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:active {
+    transform: translateX(-50rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button .button-glow {
+    box-shadow: 0 0 50rpx rgba(0, 150, 255, 0.8), 0 0 0 4rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button {
+    transform: translateX(50rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:hover {
+    transform: translateX(50rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:active {
+    transform: translateX(50rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button .button-glow {
+    box-shadow: 0 0 50rpx rgba(76, 175, 80, 0.8), 0 0 0 4rpx rgba(255, 255, 255, 0.7) inset;
+  }
+}
+@media (max-width: 480px) {
+  .chongqing-mountain-page .page-title {
+    top: 98rpx;
+  }
+  .chongqing-mountain-page .page-title .title-text {
+    font-size: 36rpx;
+    letter-spacing: 2rpx;
+  }
+  .chongqing-mountain-page .mountain-image {
+    width: 94%;
+  }
+  .chongqing-mountain-page .back-button {
+    top: 98rpx;
+    left: 10rpx;
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .chongqing-mountain-page .back-button .back-arrow {
+    font-size: 28rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container {
+    bottom: 80rpx;
+    gap: 0;
+    padding: 0 15rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button {
+    width: 300rpx;
+    height: 120rpx;
+    border-radius: 28rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-image {
+    border-radius: 28rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-glow {
+    border-radius: 38rpx;
+    top: -6rpx;
+    left: -6rpx;
+    right: -6rpx;
+    bottom: -6rpx;
+    box-shadow: 0 0 45rpx rgba(97, 79, 255, 0.8), 0 0 0 3rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button {
+    transform: translateX(-40rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:hover {
+    transform: translateX(-40rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:active {
+    transform: translateX(-40rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button .button-glow {
+    box-shadow: 0 0 45rpx rgba(0, 150, 255, 0.8), 0 0 0 3rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button {
+    transform: translateX(40rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:hover {
+    transform: translateX(40rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:active {
+    transform: translateX(40rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button .button-glow {
+    box-shadow: 0 0 45rpx rgba(76, 175, 80, 0.8), 0 0 0 3rpx rgba(255, 255, 255, 0.7) inset;
+  }
+}
+@media (max-width: 360px) {
+  .chongqing-mountain-page .page-title {
+    top: 90rpx;
+  }
+  .chongqing-mountain-page .page-title .title-text {
+    font-size: 32rpx;
+  }
+  .chongqing-mountain-page .back-button {
+    top: 90rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container {
+    bottom: 70rpx;
+    padding: 0 10rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button {
+    width: 250rpx;
+    height: 105rpx;
+    border-radius: 25rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-image {
+    border-radius: 25rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-glow {
+    border-radius: 35rpx;
+    top: -5rpx;
+    left: -5rpx;
+    right: -5rpx;
+    bottom: -5rpx;
+    box-shadow: 0 0 40rpx rgba(97, 79, 255, 0.8), 0 0 0 2rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button {
+    transform: translateX(-30rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:hover {
+    transform: translateX(-30rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:active {
+    transform: translateX(-30rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button .button-glow {
+    box-shadow: 0 0 40rpx rgba(0, 150, 255, 0.8), 0 0 0 2rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button {
+    transform: translateX(30rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:hover {
+    transform: translateX(30rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:active {
+    transform: translateX(30rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button .button-glow {
+    box-shadow: 0 0 40rpx rgba(76, 175, 80, 0.8), 0 0 0 2rpx rgba(255, 255, 255, 0.7) inset;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .chongqing-mountain-page .page-title {
+    top: 80rpx;
+  }
+  .chongqing-mountain-page .page-title .title-text {
+    font-size: 36rpx;
+  }
+  .chongqing-mountain-page .back-button {
+    top: 80rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container {
+    bottom: 50rpx;
+    gap: 5rpx;
+    padding: 0 20rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button {
+    width: 320rpx;
+    height: 115rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-image {
+    border-radius: 25rpx;
+  }
+  .chongqing-mountain-page .action-buttons-container .image-button .button-glow {
+    border-radius: 35rpx;
+    top: -6rpx;
+    left: -6rpx;
+    right: -6rpx;
+    bottom: -6rpx;
+    box-shadow: 0 0 50rpx rgba(97, 79, 255, 0.8), 0 0 0 4rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button {
+    transform: translateX(-40rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:hover {
+    transform: translateX(-40rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button:active {
+    transform: translateX(-40rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .water-button .button-glow {
+    box-shadow: 0 0 50rpx rgba(0, 150, 255, 0.8), 0 0 0 4rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button {
+    transform: translateX(40rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:hover {
+    transform: translateX(40rpx) scale(1.05);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button:active {
+    transform: translateX(40rpx) translateY(8rpx);
+  }
+  .chongqing-mountain-page .action-buttons-container .weed-button .button-glow {
+    box-shadow: 0 0 50rpx rgba(76, 175, 80, 0.8), 0 0 0 4rpx rgba(255, 255, 255, 0.7) inset;
+  }
+  .chongqing-mountain-page .mountain-image {
+    width: 80%;
+  }
+}
